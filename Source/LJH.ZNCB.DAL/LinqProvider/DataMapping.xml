@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ZhinengChaoBiao" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+  <Table Name="Sysparameter" Member="LJH.ZNCB.Model.SysparameterInfo">
+    <Type Name="LJH.ZNCB.Model.SysparameterInfo">
+      <Column Name="ID" Member="ID"  DbType="nvarchar(50)" IsPrimaryKey="true" />
+      <Column Name="Value" Member="Value" DbType="nvarchar(4000)" UpdateCheck="Never"/>
+      <Column Name="Memo" Member="Memo" DbType="nvarchar(200)" UpdateCheck="Never"/>
+    </Type>
+  </Table>
+  <Table Name="AutoCreateNumber" Member="LJH.ZNCB.DAL.LinqProvider.AutoCreateNumber">
+    <Type Name="LJH.ZNCB.DAL.LinqProvider.AutoCreateNumber">
+      <Column Name="Prefix" Member="Prefix"  DbType="nvarchar(50)" IsPrimaryKey="true" />
+      <Column Name="Number" Member="Number" DbType="int not null" UpdateCheck="Never"/>
+      <Column Name="NumberType" Member="NumberType" DbType="nvarchar(50) not null" UpdateCheck="Never"/>
+    </Type>
+  </Table>
+  <Table Name="Division" Member="LJH.ZNCB.Model.Division">
+    <Type Name="LJH.ZNCB.Model.Division">
+      <Column Name="ID" Member="ID"  DbType="nvarchar(50)" IsPrimaryKey="true" />
+      <Column Name="Name" Member="Name" DbType="nvarchar(50) not null" UpdateCheck="Never"/>
+      <Column Name="Parent" Member="Parent" DbType="nvarchar(50)" UpdateCheck="Never"/>
+      <Column Name="Memo" Member="Memo" DbType="nvarchar(200)" UpdateCheck="Never"/>
+    </Type>
+  </Table>
+  <Table Name="AlarmInfo" Member="LJH.ZNCB.Model.AlarmInfo">
+    <Type Name="LJH.ZNCB.Model.AlarmInfo">
+      <Column Name="ID" Member="ID"  DbType="uniqueidentifier not null" IsPrimaryKey="true"/>
+      <Column Name="AlarmDateTime" Member="AlarmDateTime" DbType="datetime NOT NULL" UpdateCheck="Never"/>
+      <Column Name="AlarmType" Member="AlarmType" DbType="int not null" UpdateCheck="Never"/>
+      <Column Name="AlarmSource" Member="AlarmSource" DbType="nvarchar(50)" UpdateCheck="Never"/>
+      <Column Name="AlarmDescr" Member="AlarmDescr" DbType="nvarchar(300)" UpdateCheck="Never"/>
+      <Column Name="OperatorID" Member="OperatorID" DbType="nvarchar(50)" UpdateCheck="Never"/>
+    </Type>
+  </Table>
+</Database>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LJH.ZNCB.DAL
+namespace LJH.ZNCB.DAL.LinqProvider
 {
-    public class Class1
+    public class DeviceProvider
     {
     }
 }
