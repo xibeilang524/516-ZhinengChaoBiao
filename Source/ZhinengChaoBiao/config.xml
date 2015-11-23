@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="ConnectString" value="/NPxT?%5RU$0.\)&lt;UYz6a?Rx/~Po 5b?=Y?HOU7 -]&lt;{EzDR*6Q^~Yud#?~x9,*%y+et^]MmS,c^Lr|s?JFrkBFA?;ex8Cv&gt;N?^&amp;/8FH]aK :VHB0uw(|\cgs6USx]l=wR3xp]!&amp;/e|H^iJd&gt;" />
+    <add key="DatabaseNeedUpgrade" value="True" />
+    <add key="RememberLogID" value="True" />
+	<add key="HHCloud" value="http://localhost:8080"/>
+  </appSettings>
+</configuration>
