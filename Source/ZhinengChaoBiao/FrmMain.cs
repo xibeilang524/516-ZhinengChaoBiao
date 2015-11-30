@@ -19,7 +19,47 @@ namespace ZhinengChaoBiao
             InitializeComponent();
         }
 
+        #region 私有变量
+        private List<Form> _openedForms = new List<Form>();
+        private DateTime _ExpireDate = new DateTime(2015, 12, 1);
         private string dbPath = "Data Source=" + Path.Combine(Application.StartupPath, "ZhinengChaoBiao.db");
+        #endregion
+        
+
+        #region 公共方法
+        /// <summary>
+        /// 显示窗口的单个实例，如果之前已经打开过，则只是激活打开过的窗体
+        /// </summary>
+        /// <param name="formType">要打开的窗体类型</param>
+        /// <param name="mainPanel">是否在主面板中打开,否则在从面板中打开</param>
+        public T ShowSingleForm<T>(bool mainPanel = true) where T : Form
+        {
+            T instance = null;
+            foreach (Form frm in _openedForms)
+            {
+                if (frm.GetType() == typeof(T))
+                {
+                    ucFormView1.ActiveForm(frm);
+                    instance = frm as T;
+                    break;
+                }
+            }
+            if (instance == null)
+            {
+                instance = Activator.CreateInstance(typeof(T)) as T;
+                instance.Tag = this;
+                instance.TopLevel = false;
+                _openedForms.Add(instance);
+                this.ucFormView1.AddAForm(instance);
+                instance.FormClosed += delegate(object sender, FormClosedEventArgs e)
+                {
+                    _openedForms.Remove(instance);
+                };
+            }
+            return instance;
+        }
+
+        #endregion
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -35,6 +75,21 @@ namespace ZhinengChaoBiao
                 OperatorID = "admin",
             };
             var ret = new AlarmInfoBLL(AppSettings.Current.ConnStr).Add(alarm);
+        }
+
+        private void mnu_Division_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmDivisionMaster>();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmDeviceBusMaster>();
+        }
+
+        private void mnu_Device_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmDeviceMaster>();
         }
     }
 }

@@ -10,19 +10,19 @@ using LJH.GeneralLibrary.Core.DAL.Linq;
 
 namespace LJH.ZNCB.DAL.LinqProvider
 {
-    class DivisionProvider : ProviderBase<Division, string>
+    class DeviceBusProvider : ProviderBase<DeviceBus, string>
     {
         #region 构造函数
-        public DivisionProvider(string connStr, System.Data.Linq.Mapping.MappingSource ms)
+        public DeviceBusProvider(string connStr, System.Data.Linq.Mapping.MappingSource ms)
             : base(connStr, ms)
         {
         }
         #endregion
 
         #region 重写基类方法
-        protected override Division GetingItemByID(string id, DataContext dc)
+        protected override DeviceBus GetingItemByID(string id, DataContext dc)
         {
-            return dc.GetTable<Division>().SingleOrDefault(it => it.ID == id);
+            return dc.GetTable<DeviceBus>().SingleOrDefault(it => it.ID == id);
         }
         #endregion
     }

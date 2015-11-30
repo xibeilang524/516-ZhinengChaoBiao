@@ -81,6 +81,7 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="DateTimeRange.cs" />
     <Compile Include="Device.cs" />
+    <Compile Include="DeviceBus.cs" />
     <Compile Include="Division.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchCondition\AlarmSearchCondition.cs" />

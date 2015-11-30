@@ -50,6 +50,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDeviceBusDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeviceBusDetail.designer.cs">
+      <DependentUpon>FrmDeviceBusDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDeviceBusMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeviceBusMaster.designer.cs">
+      <DependentUpon>FrmDeviceBusMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDeviceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeviceDetail.designer.cs">
+      <DependentUpon>FrmDeviceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDeviceMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeviceMaster.designer.cs">
+      <DependentUpon>FrmDeviceMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDivisionDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDivisionDetail.designer.cs">
+      <DependentUpon>FrmDivisionDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDivisionMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDivisionMaster.designer.cs">
+      <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +94,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDeviceBusDetail.resx">
+      <DependentUpon>FrmDeviceBusDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeviceBusMaster.resx">
+      <DependentUpon>FrmDeviceBusMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeviceDetail.resx">
+      <DependentUpon>FrmDeviceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeviceMaster.resx">
+      <DependentUpon>FrmDeviceMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDivisionDetail.resx">
+      <DependentUpon>FrmDivisionDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDivisionMaster.resx">
+      <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>

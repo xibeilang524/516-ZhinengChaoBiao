@@ -22,6 +22,24 @@
       <Column Name="Memo" Member="Memo" DbType="nvarchar(200)" UpdateCheck="Never"/>
     </Type>
   </Table>
+  <Table Name="DeviceBus" Member="LJH.ZNCB.Model.DeviceBus">
+    <Type Name="LJH.ZNCB.Model.DeviceBus">
+      <Column Name="ID" Member="ID"  DbType="nvarchar(50)" IsPrimaryKey="true" />
+      <Column Name="Name" Member="Name" DbType="nvarchar(50) not null" UpdateCheck="Never"/>
+      <Column Name="Comport" Member="Comport" DbType="int not null" UpdateCheck="Never"/>
+      <Column Name="Baud" Member="Baud" DbType="int not null" UpdateCheck="Never"/>
+    </Type>
+  </Table>
+  <Table Name="Device" Member="LJH.ZNCB.Model.Device">
+    <Type Name="LJH.ZNCB.Model.Device">
+      <Column Name="ID" Member="ID"  DbType="nvarchar(50)" IsPrimaryKey="true" />
+      <Column Name="Name" Member="Name" DbType="nvarchar(50) not null" UpdateCheck="Never"/>
+      <Column Name="Bus" Member="Bus" DbType="nvarchar(50)" UpdateCheck="Never"/>
+      <Column Name="Division" Member="Division" DbType="nvarchar(50)" UpdateCheck="Never"/>
+      <Column Name="LastDt" Member="LastDt" DbType="datetime" UpdateCheck="Never"/>
+      <Column Name="LastValue" Member="LastValue" DbType="decimal(18,4)" UpdateCheck="Never"/>
+    </Type>
+  </Table>
   <Table Name="AlarmInfo" Member="LJH.ZNCB.Model.AlarmInfo">
     <Type Name="LJH.ZNCB.Model.AlarmInfo">
       <Column Name="ID" Member="ID"  DbType="uniqueidentifier not null" IsPrimaryKey="true"/>

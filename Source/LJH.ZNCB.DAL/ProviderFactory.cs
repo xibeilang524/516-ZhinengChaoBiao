@@ -26,7 +26,7 @@ namespace LJH.ZNCB.DAL
             T instance = null;
             try
             {
-                Assembly asm = Assembly.GetExecutingAssembly(); // Assembly.Load("LJH.Inventory.DAL");
+                Assembly asm = Assembly.GetExecutingAssembly();
                 if (asm != null)
                 {
                     foreach (Type t in asm.GetTypes())
