@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LJH.ZNCB.BLL", "LJH.ZNCB.BL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LJH.ZNCB.DAL", "LJH.ZNCB.DAL\LJH.ZNCB.DAL.csproj", "{1A950AED-060F-4AD9-B03C-1355C7B64981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LJH.ZNCB.Device", "LJH.ZNCB.Device\LJH.ZNCB.Device.csproj", "{5152894B-621E-4A28-AA0B-BB2752B69F1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,16 @@ Global
 		{1A950AED-060F-4AD9-B03C-1355C7B64981}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1A950AED-060F-4AD9-B03C-1355C7B64981}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1A950AED-060F-4AD9-B03C-1355C7B64981}.Release|x86.ActiveCfg = Release|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5152894B-621E-4A28-AA0B-BB2752B69F1B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
