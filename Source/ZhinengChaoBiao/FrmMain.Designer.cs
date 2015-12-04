@@ -32,15 +32,17 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.mnu_Division = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_Device = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_Division = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_Home = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.ucFormView1 = new LJH.GeneralLibrary.WinformControl.UCFormView();
-            this.mnu_Device = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +68,8 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu_Home,
+            this.toolStripSeparator3,
             this.toolStripButton1,
             this.toolStripSeparator2,
             this.mnu_Device,
@@ -77,16 +81,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // mnu_Division
-            // 
-            this.mnu_Division.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Division.Image")));
-            this.mnu_Division.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnu_Division.Name = "mnu_Division";
-            this.mnu_Division.Size = new System.Drawing.Size(60, 45);
-            this.mnu_Division.Text = "区域管理";
-            this.mnu_Division.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu_Division.Click += new System.EventHandler(this.mnu_Division_Click);
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
@@ -97,40 +91,10 @@
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // statusStrip1
+            // toolStripSeparator2
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(788, 22);
-            this.statusStrip1.TabIndex = 3;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 48);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 401);
-            this.panel1.TabIndex = 4;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitter1.Location = new System.Drawing.Point(200, 48);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(6, 401);
-            this.splitter1.TabIndex = 5;
-            this.splitter1.TabStop = false;
-            // 
-            // ucFormView1
-            // 
-            this.ucFormView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucFormView1.FormHeaderLength = 135;
-            this.ucFormView1.HideHeader = false;
-            this.ucFormView1.Location = new System.Drawing.Point(206, 48);
-            this.ucFormView1.Name = "ucFormView1";
-            this.ucFormView1.Size = new System.Drawing.Size(582, 401);
-            this.ucFormView1.TabIndex = 9;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 48);
             // 
             // mnu_Device
             // 
@@ -147,10 +111,67 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 48);
             // 
-            // toolStripSeparator2
+            // mnu_Division
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 48);
+            this.mnu_Division.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Division.Image")));
+            this.mnu_Division.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_Division.Name = "mnu_Division";
+            this.mnu_Division.Size = new System.Drawing.Size(60, 45);
+            this.mnu_Division.Text = "区域管理";
+            this.mnu_Division.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_Division.Click += new System.EventHandler(this.mnu_Division_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
+            // 
+            // mnu_Home
+            // 
+            this.mnu_Home.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Home.Image")));
+            this.mnu_Home.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_Home.Name = "mnu_Home";
+            this.mnu_Home.Size = new System.Drawing.Size(36, 45);
+            this.mnu_Home.Text = "主页";
+            this.mnu_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_Home.Click += new System.EventHandler(this.mnu_Home_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(788, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 48);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 401);
+            this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.splitter1.Location = new System.Drawing.Point(200, 48);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(6, 401);
+            this.splitter1.TabIndex = 5;
+            this.splitter1.TabStop = false;
+            this.splitter1.Visible = false;
+            // 
+            // ucFormView1
+            // 
+            this.ucFormView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucFormView1.FormHeaderLength = 135;
+            this.ucFormView1.HideHeader = false;
+            this.ucFormView1.Location = new System.Drawing.Point(206, 48);
+            this.ucFormView1.Name = "ucFormView1";
+            this.ucFormView1.Size = new System.Drawing.Size(582, 401);
+            this.ucFormView1.TabIndex = 9;
             // 
             // FrmMain
             // 
@@ -190,6 +211,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton mnu_Device;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton mnu_Home;
     }
 }
 

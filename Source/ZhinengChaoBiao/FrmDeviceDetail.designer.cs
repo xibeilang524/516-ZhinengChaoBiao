@@ -38,16 +38,18 @@
             this.cmbDeviceType = new System.Windows.Forms.ComboBox();
             this.cmbBus = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtAddress = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(300, 149);
+            this.btnClose.Location = new System.Drawing.Point(300, 175);
             this.btnClose.TabIndex = 5;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(191, 149);
+            this.btnOk.Location = new System.Drawing.Point(191, 175);
             this.btnOk.TabIndex = 4;
             // 
             // txtName
@@ -88,7 +90,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(215, 93);
+            this.label2.Location = new System.Drawing.Point(10, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 49;
@@ -99,11 +101,12 @@
             this.cmbDeviceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDeviceType.FormattingEnabled = true;
             this.cmbDeviceType.Items.AddRange(new object[] {
+            "",
             "智能电表",
             "智能水表"});
-            this.cmbDeviceType.Location = new System.Drawing.Point(271, 89);
+            this.cmbDeviceType.Location = new System.Drawing.Point(66, 124);
             this.cmbDeviceType.Name = "cmbDeviceType";
-            this.cmbDeviceType.Size = new System.Drawing.Size(106, 20);
+            this.cmbDeviceType.Size = new System.Drawing.Size(121, 20);
             this.cmbDeviceType.TabIndex = 50;
             // 
             // cmbBus
@@ -124,11 +127,30 @@
             this.label4.TabIndex = 52;
             this.label4.Text = "总线";
             // 
+            // txtAddress
+            // 
+            this.txtAddress.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtAddress.Location = new System.Drawing.Point(235, 88);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(142, 21);
+            this.txtAddress.TabIndex = 53;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(203, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "地址";
+            // 
             // FrmDeviceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 184);
+            this.ClientSize = new System.Drawing.Size(387, 210);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbBus);
             this.Controls.Add(this.cmbDeviceType);
@@ -150,6 +172,8 @@
             this.Controls.SetChildIndex(this.cmbDeviceType, 0);
             this.Controls.SetChildIndex(this.cmbBus, 0);
             this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.txtAddress, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +189,7 @@
         private System.Windows.Forms.ComboBox cmbDeviceType;
         private System.Windows.Forms.ComboBox cmbBus;
         private System.Windows.Forms.Label label4;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtAddress;
+        private System.Windows.Forms.Label label5;
     }
 }

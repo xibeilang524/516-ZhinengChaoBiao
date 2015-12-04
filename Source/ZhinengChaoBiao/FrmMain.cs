@@ -21,10 +21,9 @@ namespace ZhinengChaoBiao
 
         #region 私有变量
         private List<Form> _openedForms = new List<Form>();
-        private DateTime _ExpireDate = new DateTime(2015, 12, 1);
+        private DateTime _ExpireDate = new DateTime(2015, 12, 31);
         private string dbPath = "Data Source=" + Path.Combine(Application.StartupPath, "ZhinengChaoBiao.db");
         #endregion
-        
 
         #region 公共方法
         /// <summary>
@@ -61,20 +60,18 @@ namespace ZhinengChaoBiao
 
         #endregion
 
+        #region 事件处理程序
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.Text = string.Format("{0} [{1}]", "能源管理平台", Application.ProductVersion);
-            AppSettings .Current .ConnStr ="SQLITE:" + dbPath;
-            var alarm = new AlarmInfo()
+            if (DateTime.Today > _ExpireDate)
             {
-                ID = Guid.NewGuid(),
-                AlarmDateTime = DateTime.Now,
-                AlarmType = AlarmType.System,
-                AlarmSource ="系统",
-                AlarmDescr = "登录系统",
-                OperatorID = "admin",
-            };
-            var ret = new AlarmInfoBLL(AppSettings.Current.ConnStr).Add(alarm);
+                MessageBox.Show("软件已经过期,请联系供应商");
+                Environment.Exit(0);
+            }
+            this.Text = string.Format("{0} [{1}]", "能源管理平台", Application.ProductVersion);
+            AppSettings.Current.ConnStr = "SQLITE:" + dbPath;
+
+            mnu_Home.PerformClick();
         }
 
         private void mnu_Division_Click(object sender, EventArgs e)
@@ -91,5 +88,11 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmDeviceMaster>();
         }
+
+        private void mnu_Home_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmHome>();
+        }
+        #endregion
     }
 }

@@ -75,15 +75,16 @@ namespace ZhinengChaoBiao
             txtID.Text = ct.ID;
             txtID.Enabled = false;
             txtName.Text = ct.Name;
-            for(int i=0;i<cmbBus .Items .Count ;i++)
+            for (int i = 0; i < cmbBus.Items.Count; i++)
             {
-                if ((cmbBus .Items[i] as DeviceBus).ID == ct.Bus)
+                if ((cmbBus.Items[i] as DeviceBus).ID == ct.Bus)
                 {
                     cmbBus.SelectedIndex = i;
                     break;
                 }
             }
-            cmbDeviceType.SelectedIndex = ct.DeviceType;
+            txtAddress.Text = ct.Address;
+            cmbDeviceType.Text = ct.DeviceType.ToString();
         }
 
         protected override Object GetItemFromInput()
@@ -96,7 +97,8 @@ namespace ZhinengChaoBiao
             }
             ct.Name = txtName.Text;
             ct.Bus = (cmbBus.SelectedItem as DeviceBus).ID;
-            ct.DeviceType = cmbDeviceType.SelectedIndex;
+            ct.DeviceType = (DeviceType)cmbDeviceType.SelectedIndex;
+            ct.Address = txtAddress.Text.Trim();
             return ct;
         }
 

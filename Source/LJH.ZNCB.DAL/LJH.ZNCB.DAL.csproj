@@ -79,6 +79,7 @@
     <Compile Include="LinqProvider\AutoNumberCreater.cs" />
     <Compile Include="LinqProvider\DeviceBusProvider.cs" />
     <Compile Include="LinqProvider\DeviceProvider.cs" />
+    <Compile Include="LinqProvider\DeviceReadLogProvider.cs" />
     <Compile Include="LinqProvider\DivisionProvider.cs" />
     <Compile Include="LinqProvider\SysparameterProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

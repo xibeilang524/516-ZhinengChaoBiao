@@ -82,9 +82,12 @@
     <Compile Include="DateTimeRange.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="DeviceBus.cs" />
+    <Compile Include="DeviceReadLog.cs" />
+    <Compile Include="DeviceType.cs" />
     <Compile Include="Division.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchCondition\AlarmSearchCondition.cs" />
+    <Compile Include="SearchCondition\DeviceReadLogSearchCondition.cs" />
     <Compile Include="SysparameterInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

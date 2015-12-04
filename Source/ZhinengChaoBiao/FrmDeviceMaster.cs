@@ -59,9 +59,13 @@ namespace ZhinengChaoBiao
             Device ct = item as Device;
             row.Cells["colID"].Value = ct.ID;
             row.Cells["colName"].Value = ct.Name;
-            var bus=_Buses .SingleOrDefault (it=>it.ID ==ct.Bus );
+            var bus = _Buses.SingleOrDefault(it => it.ID == ct.Bus);
             row.Cells["colBus"].Value = bus != null ? bus.Name : null;
-            row.Cells["colDeviceType"].Value = ct.DeviceType == 1 ? "智能电表" : "智能水表";
+            row.Cells["colDeviceType"].Value = ct.DeviceType.ToString();
+            row.Cells["colAddress"].Value = ct.Address;
+            row.Cells["colState"].Value = ct.State;
+            row.Cells["colLastDt"].Value = ct.LastDt;
+            row.Cells["colLastValue"].Value = ct.LastValue;
         }
 
         protected override bool DeletingItem(object item)
@@ -74,5 +78,19 @@ namespace ZhinengChaoBiao
             return ret.Result == ResultCode.Successful;
         }
         #endregion
+
+        private void 模拟读表ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count == 1)
+            {
+                FrmRead frm = new FrmRead();
+                frm.Device = this.dataGridView1.SelectedRows[0].Tag as Device;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    var d = new DeviceBLL(AppSettings.Current.ConnStr).GetByID(frm.Device.ID).QueryObject;
+                    ShowItemInGridViewRow(dataGridView1.SelectedRows[0], d);
+                }
+            }
+        }
     }
 }
