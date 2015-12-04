@@ -79,6 +79,7 @@
     <Compile Include="BLLBase.cs" />
     <Compile Include="DeviceBLL.cs" />
     <Compile Include="DeviceBusBLL.cs" />
+    <Compile Include="DeviceReadLogBLL.cs" />
     <Compile Include="DivisionBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

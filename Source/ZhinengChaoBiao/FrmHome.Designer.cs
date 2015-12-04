@@ -28,138 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnFresh = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtMonthWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtMonthEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtYearWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtYearEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtMonthWater)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtMonthEnergy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 354);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(927, 162);
-            this.panel1.TabIndex = 62;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 348);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(927, 6);
-            this.splitter1.TabIndex = 63;
-            this.splitter1.TabStop = false;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnFresh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(927, 50);
             this.panel2.TabIndex = 65;
             // 
-            // dataGridView1
+            // btnFresh
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(927, 298);
-            this.dataGridView1.TabIndex = 66;
+            this.btnFresh.Location = new System.Drawing.Point(769, 12);
+            this.btnFresh.Name = "btnFresh";
+            this.btnFresh.Size = new System.Drawing.Size(108, 31);
+            this.btnFresh.TabIndex = 0;
+            this.btnFresh.Text = "刷新(&F)";
+            this.btnFresh.UseVisualStyleBackColor = true;
+            this.btnFresh.Click += new System.EventHandler(this.btnFresh_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.splitter1);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(927, 466);
+            this.panel1.TabIndex = 66;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(727, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 466);
+            this.panel3.TabIndex = 7;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(721, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(6, 466);
+            this.splitter1.TabIndex = 8;
+            this.splitter1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.chart2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.chtYearEnergy, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.chtYearWater, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.chtMonthWater, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.chtMonthEnergy, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(927, 162);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 466);
+            this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // chart1
+            // chtMonthWater
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chtMonthWater.ChartAreas.Add(chartArea3);
+            this.chtMonthWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.ItemColumnSpacing = 10;
+            legend3.Name = "Legend1";
+            this.chtMonthWater.Legends.Add(legend3);
+            this.chtMonthWater.Location = new System.Drawing.Point(3, 3);
+            this.chtMonthWater.Name = "chtMonthWater";
+            this.chtMonthWater.Size = new System.Drawing.Size(354, 227);
+            this.chtMonthWater.TabIndex = 3;
+            this.chtMonthWater.Text = "chart2";
+            title1.Name = "adc";
+            this.chtMonthWater.Titles.Add(title1);
+            // 
+            // chtMonthEnergy
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.chtMonthEnergy.ChartAreas.Add(chartArea4);
+            this.chtMonthEnergy.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.ItemColumnSpacing = 10;
+            legend4.Name = "Legend1";
+            this.chtMonthEnergy.Legends.Add(legend4);
+            this.chtMonthEnergy.Location = new System.Drawing.Point(363, 3);
+            this.chtMonthEnergy.Name = "chtMonthEnergy";
+            this.chtMonthEnergy.Size = new System.Drawing.Size(355, 227);
+            this.chtMonthEnergy.TabIndex = 1;
+            this.chtMonthEnergy.Text = "chart1";
+            // 
+            // chtYearWater
             // 
             chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chtYearWater.ChartAreas.Add(chartArea2);
+            this.chtYearWater.Dock = System.Windows.Forms.DockStyle.Fill;
             legend2.ItemColumnSpacing = 10;
             legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(3, 3);
-            this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(457, 156);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1";
+            this.chtYearWater.Legends.Add(legend2);
+            this.chtYearWater.Location = new System.Drawing.Point(363, 236);
+            this.chtYearWater.Name = "chtYearWater";
+            this.chtYearWater.Size = new System.Drawing.Size(355, 227);
+            this.chtYearWater.TabIndex = 4;
+            this.chtYearWater.Text = "chart1";
             // 
-            // chart2
+            // chtYearEnergy
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chtYearEnergy.ChartAreas.Add(chartArea1);
+            this.chtYearEnergy.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.ItemColumnSpacing = 10;
             legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(466, 3);
-            this.chart2.Name = "chart2";
-            this.chart2.Size = new System.Drawing.Size(458, 156);
-            this.chart2.TabIndex = 2;
-            this.chart2.Text = "chart2";
+            this.chtYearEnergy.Legends.Add(legend1);
+            this.chtYearEnergy.Location = new System.Drawing.Point(3, 236);
+            this.chtYearEnergy.Name = "chtYearEnergy";
+            this.chtYearEnergy.Size = new System.Drawing.Size(354, 227);
+            this.chtYearEnergy.TabIndex = 5;
+            this.chtYearEnergy.Text = "chart1";
             // 
-            // FrmDeviceReport
+            // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 516);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmDeviceReport";
-            this.Text = "FrmDeviceReport";
+            this.Controls.Add(this.panel2);
+            this.Name = "FrmHome";
+            this.Text = "主页";
             this.Load += new System.EventHandler(this.FrmDeviceReport_Load);
+            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtMonthWater)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtMonthEnergy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnFresh;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtMonthWater;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtMonthEnergy;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtYearEnergy;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtYearWater;
     }
 }
