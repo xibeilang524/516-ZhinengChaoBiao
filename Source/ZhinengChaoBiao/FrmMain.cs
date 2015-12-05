@@ -94,5 +94,10 @@ namespace ZhinengChaoBiao
             ShowSingleForm<FrmHome>();
         }
         #endregion
+
+        private void mnu_ReadLogReport_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmReadLogReport>();
+        }
     }
 }

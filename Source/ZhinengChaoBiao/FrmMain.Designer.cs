@@ -34,14 +34,16 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.mnu_Home = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu_Device = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.ucFormView1 = new LJH.GeneralLibrary.WinformControl.UCFormView();
+            this.mnu_ReadLogReport = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,9 @@
             this.mnu_Device,
             this.toolStripSeparator2,
             this.toolStripButton1,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.mnu_ReadLogReport,
+            this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(788, 48);
@@ -94,21 +98,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(60, 45);
-            this.toolStripButton1.Text = "总线管理";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 48);
-            // 
             // mnu_Device
             // 
             this.mnu_Device.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Device.Image")));
@@ -118,6 +107,21 @@
             this.mnu_Device.Text = "设备管理";
             this.mnu_Device.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mnu_Device.Click += new System.EventHandler(this.mnu_Device_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 48);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(60, 45);
+            this.toolStripButton1.Text = "总线管理";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
@@ -161,6 +165,21 @@
             this.ucFormView1.Size = new System.Drawing.Size(582, 401);
             this.ucFormView1.TabIndex = 9;
             // 
+            // mnu_ReadLogReport
+            // 
+            this.mnu_ReadLogReport.Image = ((System.Drawing.Image)(resources.GetObject("mnu_ReadLogReport.Image")));
+            this.mnu_ReadLogReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_ReadLogReport.Name = "mnu_ReadLogReport";
+            this.mnu_ReadLogReport.Size = new System.Drawing.Size(60, 45);
+            this.mnu_ReadLogReport.Text = "读表记录";
+            this.mnu_ReadLogReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_ReadLogReport.Click += new System.EventHandler(this.mnu_ReadLogReport_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 48);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -200,6 +219,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton mnu_Home;
+        private System.Windows.Forms.ToolStripButton mnu_ReadLogReport;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

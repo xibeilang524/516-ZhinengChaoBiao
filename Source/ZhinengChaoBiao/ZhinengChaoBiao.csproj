@@ -38,6 +38,18 @@
     <Reference Include="LJH.GeneralLibrary">
       <HintPath>..\Reference\LJH.GeneralLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Reference\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\Reference\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\Reference\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\Reference\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -56,6 +68,12 @@
     </Compile>
     <Compile Include="Controls\DivisionTree.designer.cs">
       <DependentUpon>DivisionTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCDivision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCDivision.Designer.cs">
+      <DependentUpon>UCDivision.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDeviceBusDetail.cs">
       <SubType>Form</SubType>
@@ -117,10 +135,20 @@
     <Compile Include="Controls\MyTree.designer.cs">
       <DependentUpon>MyTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReadLogReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReadLogReport.Designer.cs">
+      <DependentUpon>FrmReadLogReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NPOIExcelHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\DivisionTree.resx">
       <DependentUpon>DivisionTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCDivision.resx">
+      <DependentUpon>UCDivision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDeviceBusDetail.resx">
       <DependentUpon>FrmDeviceBusDetail.cs</DependentUpon>
@@ -148,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRead.resx">
       <DependentUpon>FrmRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReadLogReport.resx">
+      <DependentUpon>FrmReadLogReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
