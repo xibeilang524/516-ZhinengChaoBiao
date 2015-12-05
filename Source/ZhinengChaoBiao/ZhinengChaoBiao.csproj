@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DivisionTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DivisionTree.designer.cs">
+      <DependentUpon>DivisionTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDeviceBusDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +111,17 @@
     <Compile Include="FrmRead.Designer.cs">
       <DependentUpon>FrmRead.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MyTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MyTree.designer.cs">
+      <DependentUpon>MyTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\DivisionTree.resx">
+      <DependentUpon>DivisionTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDeviceBusDetail.resx">
       <DependentUpon>FrmDeviceBusDetail.cs</DependentUpon>
     </EmbeddedResource>

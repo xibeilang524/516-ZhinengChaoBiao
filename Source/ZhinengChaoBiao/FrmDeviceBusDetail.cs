@@ -24,7 +24,7 @@ namespace ZhinengChaoBiao
         protected override void InitControls()
         {
             base.InitControls();
-            cmbCommport.Init();
+            cmbCommport.Init(false);
         }
 
         public override void ShowOperatorRights()
@@ -65,6 +65,7 @@ namespace ZhinengChaoBiao
             txtID.Text = ct.ID;
             txtID.Enabled = false;
             txtName.Text = ct.Name;
+            
             cmbCommport.ComPort = (byte)ct.Comport;
             cmbBaud.Text = ct.Baud.ToString();
         }

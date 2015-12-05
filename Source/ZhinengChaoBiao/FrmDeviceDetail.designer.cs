@@ -40,6 +40,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtAddress = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.txtDivision = new LJH.GeneralLibrary.WinformControl.DBCTextBox(this.components);
+            this.lnkDisivion = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnClose
@@ -144,11 +146,35 @@
             this.label5.TabIndex = 54;
             this.label5.Text = "地址";
             // 
+            // txtDivision
+            // 
+            this.txtDivision.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.txtDivision.Location = new System.Drawing.Point(235, 123);
+            this.txtDivision.MaxLength = 100;
+            this.txtDivision.Name = "txtDivision";
+            this.txtDivision.ReadOnly = true;
+            this.txtDivision.Size = new System.Drawing.Size(142, 21);
+            this.txtDivision.TabIndex = 56;
+            this.txtDivision.DoubleClick += new System.EventHandler(this.txtDivision_DoubleClick);
+            // 
+            // lnkDisivion
+            // 
+            this.lnkDisivion.AutoSize = true;
+            this.lnkDisivion.Location = new System.Drawing.Point(203, 128);
+            this.lnkDisivion.Name = "lnkDisivion";
+            this.lnkDisivion.Size = new System.Drawing.Size(29, 12);
+            this.lnkDisivion.TabIndex = 55;
+            this.lnkDisivion.TabStop = true;
+            this.lnkDisivion.Text = "区域";
+            this.lnkDisivion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDivision_LinkClicked);
+            // 
             // FrmDeviceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 210);
+            this.Controls.Add(this.txtDivision);
+            this.Controls.Add(this.lnkDisivion);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -174,6 +200,8 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.txtAddress, 0);
+            this.Controls.SetChildIndex(this.lnkDisivion, 0);
+            this.Controls.SetChildIndex(this.txtDivision, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +219,7 @@
         private System.Windows.Forms.Label label4;
         private LJH.GeneralLibrary.WinformControl.DBCTextBox txtAddress;
         private System.Windows.Forms.Label label5;
+        private LJH.GeneralLibrary.WinformControl.DBCTextBox txtDivision;
+        private System.Windows.Forms.LinkLabel lnkDisivion;
     }
 }

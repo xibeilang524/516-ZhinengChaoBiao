@@ -41,12 +41,6 @@ namespace ZhinengChaoBiao
 
         protected override bool CheckInput()
         {
-            if (string.IsNullOrEmpty(txtID.Text))
-            {
-                MessageBox.Show("区域编码不能为空");
-                txtID.Focus();
-                return false;
-            }
             if (string.IsNullOrEmpty(txtName.Text))
             {
                 MessageBox.Show("名称不能为空");
@@ -64,8 +58,6 @@ namespace ZhinengChaoBiao
         protected override void ItemShowing()
         {
             Division ct = UpdatingItem as Division;
-            txtID.Text = ct.ID;
-            txtID.Enabled = false;
             txtName.Text = ct.Name;
             if (!string.IsNullOrEmpty(ct.Parent))
             {
@@ -81,7 +73,6 @@ namespace ZhinengChaoBiao
             if (IsAdding)
             {
                 ct = new Division();
-                ct.ID = txtID.Text;
             }
             ct.Name = txtName.Text;
             ct.Parent = ParentDivision != null ? ParentDivision.ID : null;

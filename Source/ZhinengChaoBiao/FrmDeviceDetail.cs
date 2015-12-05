@@ -20,6 +20,14 @@ namespace ZhinengChaoBiao
             InitializeComponent();
         }
 
+        #region 公共属性
+        /// <summary>
+        /// 获取或设置父类别
+        /// </summary>
+        public Division ParentDivision { get; set; }
+        #endregion
+
+        #region 私有方法 
         private void InitCmbBus()
         {
             List<DeviceBus> buses = new DeviceBusBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
@@ -29,12 +37,14 @@ namespace ZhinengChaoBiao
                 cmbBus.DisplayMember = "Name";
             }
         }
+        #endregion
 
         #region 重写基类方法
         protected override void InitControls()
         {
             base.InitControls();
             InitCmbBus();
+            txtDivision.Text = ParentDivision != null ? ParentDivision.Name : string.Empty;
         }
 
         public override void ShowOperatorRights()
@@ -85,6 +95,11 @@ namespace ZhinengChaoBiao
             }
             txtAddress.Text = ct.Address;
             cmbDeviceType.Text = ct.DeviceType.ToString();
+            if (!string.IsNullOrEmpty(ct.Division))
+            {
+                ParentDivision = (new DivisionBLL(AppSettings.Current.ConnStr)).GetByID(ct.Division).QueryObject;
+                txtDivision.Text = ParentDivision != null ? ParentDivision.Name : string.Empty;
+            }
         }
 
         protected override Object GetItemFromInput()
@@ -99,6 +114,7 @@ namespace ZhinengChaoBiao
             ct.Bus = (cmbBus.SelectedItem as DeviceBus).ID;
             ct.DeviceType = (DeviceType)cmbDeviceType.SelectedIndex;
             ct.Address = txtAddress.Text.Trim();
+            ct.Division = ParentDivision != null ? ParentDivision.ID : null;
             return ct;
         }
 
@@ -110,6 +126,25 @@ namespace ZhinengChaoBiao
         protected override CommandResult UpdateItem(object updatingItem)
         {
             return (new DeviceBLL(AppSettings.Current.ConnStr)).Update(updatingItem as Device);
+        }
+        #endregion
+
+        #region 事件处理程序
+        private void lnkDivision_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmDivisionMaster frm = new FrmDivisionMaster();
+            frm.ForSelect = true;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                ParentDivision = frm.SelectedItem as Division;
+                txtDivision.Text = ParentDivision != null ? ParentDivision.Name : string.Empty;
+            }
+        }
+
+        private void txtDivision_DoubleClick(object sender, EventArgs e)
+        {
+            ParentDivision = null;
+            txtDivision.Text = ParentDivision != null ? ParentDivision.Name : string.Empty;
         }
         #endregion
     }

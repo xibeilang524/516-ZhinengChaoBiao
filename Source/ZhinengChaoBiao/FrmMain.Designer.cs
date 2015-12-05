@@ -32,13 +32,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.mnu_Home = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu_Device = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu_Division = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnu_Home = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -70,16 +69,30 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu_Home,
             this.toolStripSeparator3,
-            this.toolStripButton1,
-            this.toolStripSeparator2,
             this.mnu_Device,
-            this.toolStripSeparator1,
-            this.mnu_Division});
+            this.toolStripSeparator2,
+            this.toolStripButton1,
+            this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(788, 48);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // mnu_Home
+            // 
+            this.mnu_Home.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Home.Image")));
+            this.mnu_Home.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_Home.Name = "mnu_Home";
+            this.mnu_Home.Size = new System.Drawing.Size(48, 45);
+            this.mnu_Home.Text = "主   页";
+            this.mnu_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_Home.Click += new System.EventHandler(this.mnu_Home_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
             // 
             // toolStripButton1
             // 
@@ -110,31 +123,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 48);
-            // 
-            // mnu_Division
-            // 
-            this.mnu_Division.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Division.Image")));
-            this.mnu_Division.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnu_Division.Name = "mnu_Division";
-            this.mnu_Division.Size = new System.Drawing.Size(60, 45);
-            this.mnu_Division.Text = "区域管理";
-            this.mnu_Division.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu_Division.Click += new System.EventHandler(this.mnu_Division_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 48);
-            // 
-            // mnu_Home
-            // 
-            this.mnu_Home.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Home.Image")));
-            this.mnu_Home.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnu_Home.Name = "mnu_Home";
-            this.mnu_Home.Size = new System.Drawing.Size(36, 45);
-            this.mnu_Home.Text = "主页";
-            this.mnu_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu_Home.Click += new System.EventHandler(this.mnu_Home_Click);
             // 
             // statusStrip1
             // 
@@ -202,7 +190,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 系统ToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton mnu_Division;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Splitter splitter1;

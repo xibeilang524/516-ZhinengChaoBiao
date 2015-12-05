@@ -38,13 +38,13 @@ namespace ZhinengChaoBiao
             chart.ChartAreas["ChartArea1"].AxisY.LineWidth = 2;
             //中间X,Y线条的颜色设置
             chart.ChartAreas["ChartArea1"].AxisX.MajorGrid.LineColor = Color.Blue;
+            chart.ChartAreas["ChartArea1"].AxisX.MajorGrid.LineWidth = 0;
             chart.ChartAreas["ChartArea1"].AxisY.MajorGrid.LineColor = Color.Blue;
+            chart.ChartAreas["ChartArea1"].AxisY.MajorGrid.LineWidth = 0;
             //X.Y轴数据显示间隔
             chart.ChartAreas["ChartArea1"].AxisX.Interval = 1;  //X轴数据显示间隔
-            chart.ChartAreas["ChartArea1"].AxisY.Interval = 5;
             //X轴线条显示间隔
             chart.ChartAreas["ChartArea1"].AxisX.MajorGrid.Interval = 1;
-            chart.ChartAreas["ChartArea1"].AxisX.Title = "月份";
             chart.ChartAreas["ChartArea1"].AxisX.TitleAlignment = StringAlignment.Far;
         }
 
@@ -75,12 +75,21 @@ namespace ZhinengChaoBiao
         {
             InitChart(chtMonthEnergy);
             chtMonthEnergy.Titles.Add("本月用电量");
+            chtMonthEnergy.ChartAreas["ChartArea1"].AxisY.Interval = 10;
+            chtMonthEnergy.ChartAreas["ChartArea1"].AxisX.Title = "日期";
             InitChart(chtMonthWater);
             chtMonthWater.Titles.Add("本月用水量");
+            chtMonthWater.ChartAreas["ChartArea1"].AxisY.Interval = 10;
+            chtMonthWater.ChartAreas["ChartArea1"].AxisX.Title = "日期";
             InitChart(chtYearWater);
-            chtYearWater .Titles .Add ("最近一年用水量");
+            chtYearWater.Titles.Add("最近一年用水量");
+            chtYearWater.ChartAreas["ChartArea1"].AxisY.Interval = 100;
+            chtYearWater.ChartAreas["ChartArea1"].AxisX.Title = "月份";
             InitChart(chtYearEnergy);
             chtYearEnergy.Titles.Add("最近一年用电量");
+            chtYearEnergy.ChartAreas["ChartArea1"].AxisY.Interval = 100;
+            chtYearEnergy.ChartAreas["ChartArea1"].AxisX.Title = "月份";
+
             btnFresh.PerformClick();
         }
 
@@ -91,19 +100,29 @@ namespace ZhinengChaoBiao
             con.ReadDateRange = new DateTimeRange(new DateTime(dt.Year, dt.Month, 1).AddMonths(-6), dt);
             var logs = new DeviceReadLogBLL(AppSettings.Current.ConnStr).GetItems(con).QueryObjects;
 
-            
+            var montEenergies = from it in logs
+                                where it.DeviceType == DeviceType.智能电表 && it.ReadDate >= new DateTime(dt.Year, dt.Month, 1)
+                                orderby it.ReadDate ascending
+                                group it by it.ReadDate.ToString("dd日");
+            FillChart(chtMonthEnergy, Color.Red, montEenergies);
 
-            var energies = from it in logs
-                           where it.DeviceType == DeviceType.智能电表
-                           orderby it.ReadDate ascending
-                           group it by it.ReadDate.ToString("yyyy年MM月");
-            FillChart(chtYearEnergy, Color.Red, energies);
+            var monthWaters = from it in logs
+                              where it.DeviceType == DeviceType.智能水表 && it.ReadDate >= new DateTime(dt.Year, dt.Month, 1)
+                             orderby it.ReadDate ascending
+                              group it by it.ReadDate.ToString("dd日");
+            FillChart(chtMonthWater, Color.Green, monthWaters);
 
-            var waters = from it in logs
+            var yearenergies = from it in logs
+                               where it.DeviceType == DeviceType.智能电表
+                               orderby it.ReadDate ascending
+                               group it by it.ReadDate.ToString("yyyy年MM月");
+            FillChart(chtYearEnergy, Color.Red, yearenergies);
+
+            var yearWaters = from it in logs
                          where it.DeviceType == DeviceType.智能水表
                          orderby it.ReadDate ascending
                          group it by it.ReadDate.ToString("yyyy年MM月");
-            FillChart(chtYearWater, Color.Green, waters);
+            FillChart(chtYearWater, Color.Green, yearWaters);
         }
     }
 }
