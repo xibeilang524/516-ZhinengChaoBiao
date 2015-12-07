@@ -38,12 +38,13 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_ReadLogReport = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_Statistics = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.ucFormView1 = new LJH.GeneralLibrary.WinformControl.UCFormView();
-            this.mnu_ReadLogReport = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,8 @@
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.mnu_ReadLogReport,
-            this.toolStripSeparator4});
+            this.toolStripSeparator4,
+            this.mnu_Statistics});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(788, 48);
@@ -128,6 +130,31 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 48);
             // 
+            // mnu_ReadLogReport
+            // 
+            this.mnu_ReadLogReport.Image = ((System.Drawing.Image)(resources.GetObject("mnu_ReadLogReport.Image")));
+            this.mnu_ReadLogReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_ReadLogReport.Name = "mnu_ReadLogReport";
+            this.mnu_ReadLogReport.Size = new System.Drawing.Size(60, 45);
+            this.mnu_ReadLogReport.Text = "读表记录";
+            this.mnu_ReadLogReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_ReadLogReport.Click += new System.EventHandler(this.mnu_ReadLogReport_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 48);
+            // 
+            // mnu_Statistics
+            // 
+            this.mnu_Statistics.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Statistics.Image")));
+            this.mnu_Statistics.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_Statistics.Name = "mnu_Statistics";
+            this.mnu_Statistics.Size = new System.Drawing.Size(60, 45);
+            this.mnu_Statistics.Text = "能耗统计";
+            this.mnu_Statistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_Statistics.Click += new System.EventHandler(this.mnu_Statistics_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
@@ -164,21 +191,6 @@
             this.ucFormView1.Name = "ucFormView1";
             this.ucFormView1.Size = new System.Drawing.Size(582, 401);
             this.ucFormView1.TabIndex = 9;
-            // 
-            // mnu_ReadLogReport
-            // 
-            this.mnu_ReadLogReport.Image = ((System.Drawing.Image)(resources.GetObject("mnu_ReadLogReport.Image")));
-            this.mnu_ReadLogReport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.mnu_ReadLogReport.Name = "mnu_ReadLogReport";
-            this.mnu_ReadLogReport.Size = new System.Drawing.Size(60, 45);
-            this.mnu_ReadLogReport.Text = "读表记录";
-            this.mnu_ReadLogReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.mnu_ReadLogReport.Click += new System.EventHandler(this.mnu_ReadLogReport_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 48);
             // 
             // FrmMain
             // 
@@ -221,6 +233,7 @@
         private System.Windows.Forms.ToolStripButton mnu_Home;
         private System.Windows.Forms.ToolStripButton mnu_ReadLogReport;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton mnu_Statistics;
     }
 }
 

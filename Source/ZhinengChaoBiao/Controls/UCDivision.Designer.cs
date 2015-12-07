@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbFacility = new System.Windows.Forms.ComboBox();
+            this.cmbDevice = new System.Windows.Forms.ComboBox();
             this.cmbDivision = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cmbFacility
+            // cmbDevice
             // 
-            this.cmbFacility.FormattingEnabled = true;
-            this.cmbFacility.Location = new System.Drawing.Point(42, 39);
-            this.cmbFacility.Name = "cmbFacility";
-            this.cmbFacility.Size = new System.Drawing.Size(144, 20);
-            this.cmbFacility.TabIndex = 167;
+            this.cmbDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDevice.FormattingEnabled = true;
+            this.cmbDevice.Location = new System.Drawing.Point(42, 39);
+            this.cmbDevice.Name = "cmbDevice";
+            this.cmbDevice.Size = new System.Drawing.Size(144, 20);
+            this.cmbDevice.TabIndex = 167;
             // 
             // cmbDivision
             // 
+            this.cmbDivision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDivision.FormattingEnabled = true;
             this.cmbDivision.Location = new System.Drawing.Point(42, 6);
             this.cmbDivision.Name = "cmbDivision";
@@ -77,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cmbFacility);
+            this.Controls.Add(this.cmbDevice);
             this.Controls.Add(this.cmbDivision);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
@@ -90,7 +92,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cmbFacility;
+        private System.Windows.Forms.ComboBox cmbDevice;
         private System.Windows.Forms.ComboBox cmbDivision;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;

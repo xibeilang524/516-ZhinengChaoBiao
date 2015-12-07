@@ -12,50 +12,56 @@ using LJH.ZNCB.Model.SearchCondition;
 
 namespace ZhinengChaoBiao
 {
-    public partial class FrmReadLogReport : Form
+    public partial class FrmReadLogStatistics: Form
     {
-        public FrmReadLogReport()
+        public FrmReadLogStatistics()
         {
             InitializeComponent();
         }
-
-        List<Device> _Devices = null;
 
         private void ShowItemsOnGrid(List<DeviceReadLog> items)
         {
             this.dataGridView1.Rows.Clear();
             if (items != null && items.Count > 0)
             {
-                _Devices = new DeviceBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
-                items = (from it in items
+                var gs = from it in items
                          orderby it.ReadDate ascending
-                         select it).ToList();
-                foreach (var item in items)
+                         group it by GetKey(it);
+                foreach (var g in gs)
                 {
                     int row = dataGridView1.Rows.Add();
-                    ShowItemOnRow(dataGridView1.Rows[row], item);
+                    ShowItemOnRow(dataGridView1.Rows[row], g);
                 }
             }
             lblCount.Text = string.Format("共 {0} 项", dataGridView1.Rows.Count);
         }
 
-        private void ShowItemOnRow(DataGridViewRow row, DeviceReadLog log)
+        private string GetKey(DeviceReadLog log)
         {
-            row.Tag = log;
-            row.Cells["colReadDate"].Value = log.ReadDate;
-            row.Cells["colDevice"].Value = log.DeviceName;
-            row.Cells["colDeviceType"].Value = log.DeviceType == DeviceType.智能电表 ? "用电" : (log.DeviceType == DeviceType.智能水表 ? "用水" : null);
-            row.Cells["colValue"].Value = log.ReadValue;
-            row.Cells["colLastDate"].Value = log.LastDate;
-            row.Cells["colLastValue"].Value = log.LastValue;
-            row.Cells["colAmount"].Value = log.Amount;
+            var key = log.DeviceType == DeviceType.智能电表 ? "用电" : (log.DeviceType == DeviceType.智能水表 ? "用水" : "其它");
+            if (rdDay.Checked) key += "," + log.ReadDate.ToString("yyyy年MM月dd日");
+            else if (rdMonth.Checked) key += "," + log.ReadDate.ToString("yyyy年MM月");
+            else if (rdYear.Checked) key += "," + log.ReadDate.ToString("yyyy年");
+
+            if (chkEachDevice.Checked) key += "," + log.DeviceID;
+            return key;
+        }
+
+        private void ShowItemOnRow(DataGridViewRow row, IGrouping<string, DeviceReadLog> g)
+        {
+            row.Tag = g;
+            string[] temp = g.Key.Split(',');
+            row.Cells["colReadDate"].Value = temp[1];
+            row.Cells["colDevice"].Value = temp.Length >= 3 ? g.First().DeviceName : null; //表示按设备来统计
+            row.Cells["colDeviceType"].Value = temp[0];
+            row.Cells["colAmount"].Value = g.Sum(it => it.Amount);
         }
 
         private void FrmReadLogReport_Load(object sender, EventArgs e)
         {
             this.ucDivision1.Init();
             this.ucDateTimeInterval1.Init();
-            this.ucDateTimeInterval1.SelectThisMonth();
+            this.ucDateTimeInterval1.SelectThisYear();
         }
 
         private void btnQuery_Click(object sender, EventArgs e)

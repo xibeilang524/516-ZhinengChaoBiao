@@ -62,7 +62,7 @@
             -1,
             -2147483648});
             this.txtValue.Name = "txtValue";
-            this.txtValue.PointCount = -1;
+            this.txtValue.PointCount = 2;
             this.txtValue.Size = new System.Drawing.Size(187, 21);
             this.txtValue.TabIndex = 84;
             this.txtValue.Text = "0";
@@ -106,7 +106,7 @@
             -1,
             -2147483648});
             this.txtLastValue.Name = "txtLastValue";
-            this.txtLastValue.PointCount = -1;
+            this.txtLastValue.PointCount = 2;
             this.txtLastValue.Size = new System.Drawing.Size(187, 21);
             this.txtLastValue.TabIndex = 90;
             this.txtLastValue.Text = "0";
@@ -118,7 +118,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 89;
-            this.label2.Text = "当前表读数";
+            this.label2.Text = "上次表读数";
             // 
             // FrmRead
             // 
@@ -134,7 +134,7 @@
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.label1);
             this.Name = "FrmRead";
-            this.Text = "FrmRead";
+            this.Text = "模拟读卡";
             this.Load += new System.EventHandler(this.FrmRead_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

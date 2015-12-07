@@ -39,7 +39,7 @@
       <Column Name="Address" Member="Address" DbType="nvarchar(50)" UpdateCheck="Never"/>
       <Column Name="State" Member="State" DbType="tinyint not null" UpdateCheck="Never"/>
       <Column Name="Division" Member="Division" DbType="nvarchar(50)" UpdateCheck="Never"/>
-      <Column Name="LastDt" Member="LastDt" DbType="datetime" UpdateCheck="Never"/>
+      <Column Name="LastDate" Member="LastDate" DbType="datetime" UpdateCheck="Never"/>
       <Column Name="LastValue" Member="LastValue" DbType="decimal(18,4)" UpdateCheck="Never"/>
     </Type>
   </Table>
@@ -47,10 +47,11 @@
     <Type Name="LJH.ZNCB.Model.DeviceReadLog">
       <Column Name="ID" Member="ID"  DbType="uniqueidentifier not null" IsPrimaryKey="true"/>
       <Column Name="DeviceID" Member="DeviceID"  DbType="nvarchar(50)" />
+      <Column Name="DeviceName" Member="DeviceName" DbType="nvarchar(50) not null" UpdateCheck="Never"/>
       <Column Name="DeviceType" Member="DeviceType" DbType="tinyint not null" UpdateCheck="Never"/>
       <Column Name="ReadDate" Member="ReadDate" DbType="datetime" UpdateCheck="Never"/>
       <Column Name="ReadValue" Member="ReadValue" DbType="decimal(18,4)" UpdateCheck="Never"/>
-      <Column Name="LastDt" Member="LastDt" DbType="datetime" UpdateCheck="Never"/>
+      <Column Name="LastDate" Member="LastDate" DbType="datetime" UpdateCheck="Never"/>
       <Column Name="LastValue" Member="LastValue" DbType="decimal(18,4)" UpdateCheck="Never"/>
       <Column Name="Amount" Member="Amount" DbType="decimal(18,4)" UpdateCheck="Never"/>
     </Type>

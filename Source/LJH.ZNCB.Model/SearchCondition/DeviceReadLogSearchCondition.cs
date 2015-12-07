@@ -12,5 +12,7 @@ namespace LJH.ZNCB.Model.SearchCondition
         public string DeviceID { get; set; }
 
         public List<string> Devices { get; set; }
+
+        public DeviceType? DeviceType { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ZhinengChaoBiao
 {
-    partial class FrmReadLogReport
+    partial class FrmReadLogStatistics
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdYear = new System.Windows.Forms.RadioButton();
+            this.rdMonth = new System.Windows.Forms.RadioButton();
+            this.rdDay = new System.Windows.Forms.RadioButton();
+            this.cmbDeviceType = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnQuery = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,13 +47,10 @@
             this.colReadDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDevice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeviceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbDeviceType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.chkEachDevice = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -56,6 +58,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.cmbDeviceType);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnExport);
@@ -65,15 +68,82 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(978, 109);
+            this.panel1.Size = new System.Drawing.Size(878, 109);
             this.panel1.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkEachDevice);
+            this.groupBox2.Controls.Add(this.rdYear);
+            this.groupBox2.Controls.Add(this.rdMonth);
+            this.groupBox2.Controls.Add(this.rdDay);
+            this.groupBox2.Location = new System.Drawing.Point(477, 11);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(190, 89);
+            this.groupBox2.TabIndex = 161;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "统计方式";
+            // 
+            // rdYear
+            // 
+            this.rdYear.AutoSize = true;
+            this.rdYear.Location = new System.Drawing.Point(128, 20);
+            this.rdYear.Name = "rdYear";
+            this.rdYear.Size = new System.Drawing.Size(47, 16);
+            this.rdYear.TabIndex = 2;
+            this.rdYear.Text = "按年";
+            this.rdYear.UseVisualStyleBackColor = true;
+            // 
+            // rdMonth
+            // 
+            this.rdMonth.AutoSize = true;
+            this.rdMonth.Checked = true;
+            this.rdMonth.Location = new System.Drawing.Point(75, 21);
+            this.rdMonth.Name = "rdMonth";
+            this.rdMonth.Size = new System.Drawing.Size(47, 16);
+            this.rdMonth.TabIndex = 1;
+            this.rdMonth.TabStop = true;
+            this.rdMonth.Text = "按月";
+            this.rdMonth.UseVisualStyleBackColor = true;
+            // 
+            // rdDay
+            // 
+            this.rdDay.AutoSize = true;
+            this.rdDay.Location = new System.Drawing.Point(22, 21);
+            this.rdDay.Name = "rdDay";
+            this.rdDay.Size = new System.Drawing.Size(47, 16);
+            this.rdDay.TabIndex = 0;
+            this.rdDay.Text = "按日";
+            this.rdDay.UseVisualStyleBackColor = true;
+            // 
+            // cmbDeviceType
+            // 
+            this.cmbDeviceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDeviceType.FormattingEnabled = true;
+            this.cmbDeviceType.Items.AddRange(new object[] {
+            "",
+            "智能电表",
+            "智能水表"});
+            this.cmbDeviceType.Location = new System.Drawing.Point(318, 80);
+            this.cmbDeviceType.Name = "cmbDeviceType";
+            this.cmbDeviceType.Size = new System.Drawing.Size(143, 20);
+            this.cmbDeviceType.TabIndex = 160;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(262, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "设备类型";
             // 
             // btnExport
             // 
             this.btnExport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExport.Location = new System.Drawing.Point(657, 11);
+            this.btnExport.Location = new System.Drawing.Point(684, 62);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(140, 62);
+            this.btnExport.Size = new System.Drawing.Size(140, 38);
             this.btnExport.TabIndex = 158;
             this.btnExport.Text = "数据另存为";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -82,9 +152,9 @@
             // btnQuery
             // 
             this.btnQuery.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnQuery.Location = new System.Drawing.Point(485, 11);
+            this.btnQuery.Location = new System.Drawing.Point(684, 14);
             this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(143, 62);
+            this.btnQuery.Size = new System.Drawing.Size(140, 38);
             this.btnQuery.TabIndex = 157;
             this.btnQuery.Text = "查询(&Q)";
             this.btnQuery.UseVisualStyleBackColor = true;
@@ -93,7 +163,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.ucDateTimeInterval1);
-            this.groupBox1.Location = new System.Drawing.Point(14, 11);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(244, 89);
             this.groupBox1.TabIndex = 2;
@@ -124,14 +194,14 @@
             this.lblCount});
             this.statusStrip1.Location = new System.Drawing.Point(0, 465);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(978, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(878, 22);
             this.statusStrip1.TabIndex = 121;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblCount
             // 
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(963, 17);
+            this.lblCount.Size = new System.Drawing.Size(863, 17);
             this.lblCount.Spring = true;
             this.lblCount.Text = "总共 0 项";
             // 
@@ -146,9 +216,6 @@
             this.colReadDate,
             this.colDevice,
             this.colDeviceType,
-            this.colValue,
-            this.colLastDate,
-            this.colLastValue,
             this.colAmount});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 109);
@@ -157,14 +224,14 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(978, 356);
+            this.dataGridView1.Size = new System.Drawing.Size(878, 356);
             this.dataGridView1.TabIndex = 122;
             // 
             // colReadDate
             // 
-            dataGridViewCellStyle1.Format = "yyyy-MM-dd HH:mm:ss";
-            this.colReadDate.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colReadDate.HeaderText = "读表时间";
+            dataGridViewCellStyle2.Format = "yyyy-MM-dd HH:mm:ss";
+            this.colReadDate.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colReadDate.HeaderText = "统计日期";
             this.colReadDate.Name = "colReadDate";
             this.colReadDate.ReadOnly = true;
             this.colReadDate.Width = 130;
@@ -181,68 +248,39 @@
             this.colDeviceType.Name = "colDeviceType";
             this.colDeviceType.ReadOnly = true;
             // 
-            // colValue
-            // 
-            this.colValue.HeaderText = "表读数";
-            this.colValue.Name = "colValue";
-            this.colValue.ReadOnly = true;
-            // 
-            // colLastDate
-            // 
-            dataGridViewCellStyle2.Format = "yyyy-MM-dd HH:mm:ss";
-            this.colLastDate.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colLastDate.HeaderText = "上次读表";
-            this.colLastDate.Name = "colLastDate";
-            this.colLastDate.ReadOnly = true;
-            this.colLastDate.Width = 130;
-            // 
-            // colLastValue
-            // 
-            this.colLastValue.HeaderText = "上次表读数";
-            this.colLastValue.Name = "colLastValue";
-            this.colLastValue.ReadOnly = true;
-            // 
             // colAmount
             // 
             this.colAmount.HeaderText = "能耗";
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
             // 
-            // cmbDeviceType
+            // chkEachDevice
             // 
-            this.cmbDeviceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDeviceType.FormattingEnabled = true;
-            this.cmbDeviceType.Items.AddRange(new object[] {
-            "",
-            "智能电表",
-            "智能水表"});
-            this.cmbDeviceType.Location = new System.Drawing.Point(318, 80);
-            this.cmbDeviceType.Name = "cmbDeviceType";
-            this.cmbDeviceType.Size = new System.Drawing.Size(143, 20);
-            this.cmbDeviceType.TabIndex = 160;
+            this.chkEachDevice.AutoSize = true;
+            this.chkEachDevice.Checked = true;
+            this.chkEachDevice.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEachDevice.Location = new System.Drawing.Point(22, 51);
+            this.chkEachDevice.Name = "chkEachDevice";
+            this.chkEachDevice.Size = new System.Drawing.Size(108, 16);
+            this.chkEachDevice.TabIndex = 3;
+            this.chkEachDevice.Text = "按设备分开统计";
+            this.chkEachDevice.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 159;
-            this.label2.Text = "设备类型";
-            // 
-            // FrmReadLogReport
+            // FrmReadLogStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 487);
+            this.ClientSize = new System.Drawing.Size(878, 487);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmReadLogReport";
+            this.Name = "FrmReadLogStatistics";
             this.Text = "读表记录报表";
             this.Load += new System.EventHandler(this.FrmReadLogReport_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -263,15 +301,17 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblCount;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbDeviceType;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReadDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDevice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDeviceType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLastDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLastValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
-        private System.Windows.Forms.ComboBox cmbDeviceType;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rdYear;
+        private System.Windows.Forms.RadioButton rdMonth;
+        private System.Windows.Forms.RadioButton rdDay;
+        private System.Windows.Forms.CheckBox chkEachDevice;
 
 
     }

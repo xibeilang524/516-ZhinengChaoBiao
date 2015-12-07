@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeviceMaster));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cMnu_Fresh = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,6 @@
             this.colState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDivision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastDt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMemo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -191,7 +189,6 @@
             this.colState,
             this.colDivision,
             this.colLastDt,
-            this.colLastValue,
             this.colMemo});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -258,14 +255,6 @@
             this.colLastDt.ReadOnly = true;
             this.colLastDt.Width = 130;
             // 
-            // colLastValue
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            this.colLastValue.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colLastValue.HeaderText = "上次表读数";
-            this.colLastValue.Name = "colLastValue";
-            this.colLastValue.ReadOnly = true;
-            // 
             // colMemo
             // 
             this.colMemo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -321,7 +310,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colState;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDivision;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastDt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLastValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMemo;
     }
 }

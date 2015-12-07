@@ -86,8 +86,8 @@ namespace ZhinengChaoBiao
             row.Cells["colDeviceType"].Value = ct.DeviceType.ToString();
             row.Cells["colAddress"].Value = ct.Address;
             row.Cells["colState"].Value = ct.State;
-            row.Cells["colLastDt"].Value = ct.LastDt;
-            row.Cells["colLastValue"].Value = ct.LastValue;
+            row.Cells["colLastDt"].Value = ct.LastDate;
+            //row.Cells["colLastValue"].Value = ct.LastValue;
             var d = facilityTree.GetDivision(ct.Division);
             row.Cells["colDivision"].Value = d != null ? d.Name : null;
             if (!_Devices.Exists(it => it.ID == ct.ID)) _Devices.Add(ct);

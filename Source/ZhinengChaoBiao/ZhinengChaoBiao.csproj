@@ -141,6 +141,12 @@
     <Compile Include="FrmReadLogReport.Designer.cs">
       <DependentUpon>FrmReadLogReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReadLogStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReadLogStatistics.designer.cs">
+      <DependentUpon>FrmReadLogStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="NPOIExcelHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReadLogReport.resx">
       <DependentUpon>FrmReadLogReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReadLogStatistics.resx">
+      <DependentUpon>FrmReadLogStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

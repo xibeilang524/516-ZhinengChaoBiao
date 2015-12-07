@@ -99,5 +99,11 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmReadLogReport>();
         }
+
+        private void mnu_Statistics_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmReadLogStatistics>();
+        }
+
     }
 }

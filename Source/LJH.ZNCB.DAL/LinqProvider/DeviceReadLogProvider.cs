@@ -31,6 +31,7 @@ namespace LJH.ZNCB.DAL.LinqProvider
                 if (con.ReadDateRange != null) ret = ret.Where(it => it.ReadDate >= con.ReadDateRange.Begin && it.ReadDate <= con.ReadDateRange.End);
                 if (!string.IsNullOrEmpty(con.DeviceID)) ret = ret.Where(it => it.DeviceID == con.DeviceID);
                 if (con.Devices != null && con.Devices.Count > 0) ret = ret.Where(it => con.Devices.Contains(it.DeviceID));
+                if (con.DeviceType.HasValue) ret = ret.Where(it => it.DeviceType == con.DeviceType.Value);
             }
             return ret.ToList();
         }

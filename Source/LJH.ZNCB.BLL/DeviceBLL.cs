@@ -39,24 +39,26 @@ namespace LJH.ZNCB.BLL
             {
                 var provider = ProviderFactory.Create<IProvider<Device, string>>(RepoUri);
                 IUnitWork unitWork = provider.CreateUnitWork();
-                if (device.LastDt.HasValue && device.LastValue < value)
+                DeviceReadLog log = null;
+                if (device.LastDate.HasValue && device.LastValue < value)
                 {
-                    var log = new DeviceReadLog()
+                    log = new DeviceReadLog()
                     {
                         ID = Guid.NewGuid(),
                         DeviceID = device.ID,
+                        DeviceName = device.Name,
                         DeviceType = device.DeviceType,
                         ReadDate = dt,
                         ReadValue = value,
-                        LastDate = device.LastDt.Value,
+                        LastDate = device.LastDate.Value,
                         LastValue = device.LastValue.Value,
-                        Amount = (decimal)(Math.Floor(value - device.LastValue.Value))
+                        Amount = value - device.LastValue.Value
                     };
                     ProviderFactory.Create<IProvider<DeviceReadLog, Guid>>(RepoUri).Insert(log, unitWork);
                 }
                 var clone = device.Clone();
-                clone.LastDt = dt;
-                clone.LastValue = value;
+                clone.LastDate = dt;
+                clone.LastValue = log != null ? (clone.LastValue + log.Amount) : value; //记录设备上次的读数时以记录里实际扣除的数为准
                 provider.Update(clone, device, unitWork);
                 return unitWork.Commit();
             }

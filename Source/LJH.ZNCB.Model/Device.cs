@@ -33,7 +33,7 @@ namespace LJH.ZNCB.Model
 
         public string Division { get; set; }
 
-        public DateTime? LastDt { get; set; }
+        public DateTime? LastDate { get; set; }
 
         public decimal? LastValue { get; set; }
         #endregion

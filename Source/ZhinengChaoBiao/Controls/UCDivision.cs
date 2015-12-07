@@ -34,10 +34,9 @@ namespace ZhinengChaoBiao.Controls
             cmbDivision.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-
-        private void InitCmbFacility()
+        private void InitCmbDevice()
         {
-            cmbFacility.DataSource = null;
+            cmbDevice.DataSource = null;
             List<Device> items = new DeviceBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
             Division d = cmbDivision.SelectedItem as Division;
             if (d != null && !string.IsNullOrEmpty(d.ID))
@@ -46,12 +45,12 @@ namespace ZhinengChaoBiao.Controls
                 items = items.Where(it => ds.Exists(item => item.ID == it.Division)).ToList();
             }
             items.Insert(0, new Device { ID = string.Empty, Name = string.Empty });
-            cmbFacility.DataSource = items;
-            cmbFacility.DisplayMember = "Name";
-            cmbFacility.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDevice.DataSource = items;
+            cmbDevice.DisplayMember = "Name";
+            cmbDevice.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        public List<Division> GetDesendents(Division division)
+        private List<Division> GetDesendents(Division division)
         {
             if (division != null)
             {
@@ -82,14 +81,31 @@ namespace ZhinengChaoBiao.Controls
 
         private void cmbDivision_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InitCmbFacility();
+            InitCmbDevice();
         }
         #endregion
 
         public void Init()
         {
             InitCmbDivision();
-            InitCmbFacility();
+            InitCmbDevice();
+        }
+
+        public List<Device> GetSelectedDevices()
+        {
+            List<Device> ret = null;
+            if (!string.IsNullOrEmpty(cmbDevice.Text))
+            {
+                ret = new List<Device>();
+                ret.Add(cmbDevice.SelectedItem as Device);
+            }
+            else if (!string.IsNullOrEmpty(cmbDivision.Text))
+            {
+                ret = new List<Device>();
+                ret.AddRange(cmbDevice.DataSource as List<Device>);
+                ret.RemoveAll(it => string.IsNullOrEmpty(it.ID));
+            }
+            return ret;
         }
     }
 }
