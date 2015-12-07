@@ -29,6 +29,7 @@ namespace LJH.ZNCB.Model
         private string _path;
 
         private string _DBPath;
+        private bool _RememberLogID;
         #endregion
 
         #region 构造函数
@@ -44,6 +45,8 @@ namespace LJH.ZNCB.Model
                     _parent = this._doc.SelectSingleNode("configuration/appSettings");
 
                     _DBPath = GetConfigContent("DBPath");
+                    string temp = GetConfigContent("RememberLogID");
+                    bool.TryParse(temp, out _RememberLogID);
                 }
                 catch
                 {
@@ -77,6 +80,22 @@ namespace LJH.ZNCB.Model
                 {
                     _DBPath = value;
                     SaveConfig("DBPath", string.Empty);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 获取或设置登录时是否记录登录名
+        /// </summary>
+        public bool RememberLogID
+        {
+            get { return _RememberLogID; }
+            set
+            {
+                if (_RememberLogID != value)
+                {
+                    _RememberLogID = value;
+                    SaveConfig("RememberLogID", _RememberLogID.ToString());
                 }
             }
         }

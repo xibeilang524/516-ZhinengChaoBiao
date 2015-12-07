@@ -9,6 +9,8 @@ using System.IO;
 using System.Windows.Forms;
 using LJH.ZNCB.BLL;
 using LJH.ZNCB.Model;
+using LJH.ZNCB.Model.Security;
+using LJH.GeneralLibrary.Core.UI;
 
 namespace ZhinengChaoBiao
 {
@@ -22,7 +24,6 @@ namespace ZhinengChaoBiao
         #region 私有变量
         private List<Form> _openedForms = new List<Form>();
         private DateTime _ExpireDate = new DateTime(2015, 12, 31);
-        private string dbPath = "Data Source=" + Path.Combine(Application.StartupPath, "ZhinengChaoBiao.db");
         #endregion
 
         #region 公共方法
@@ -58,6 +59,36 @@ namespace ZhinengChaoBiao
             return instance;
         }
 
+        private void DoLogIn()
+        {
+            DialogResult ret = (new FrmLogin()).ShowDialog();
+            if (ret == DialogResult.OK)
+            {
+                this.lblOperator.Text = Operator.Current.Name;
+                ShowState();
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        private void ShowState()
+        {
+            ShowOperatorRights();
+            foreach (var frm in _openedForms)
+            {
+                if (frm is FrmMasterBase)
+                {
+                    (frm as FrmMasterBase).ShowOperatorRights();
+                }
+            }
+        }
+
+        private void ShowOperatorRights()
+        {
+            Operator cur = Operator.Current;
+        }
         #endregion
 
         #region 事件处理程序
@@ -69,7 +100,7 @@ namespace ZhinengChaoBiao
                 Environment.Exit(0);
             }
             this.Text = string.Format("{0} [{1}]", "能源管理平台", Application.ProductVersion);
-            AppSettings.Current.ConnStr = "SQLITE:" + dbPath;
+            DoLogIn();
 
             mnu_Home.PerformClick();
         }
@@ -93,7 +124,6 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmHome>();
         }
-        #endregion
 
         private void mnu_ReadLogReport_Click(object sender, EventArgs e)
         {
@@ -104,6 +134,16 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmReadLogStatistics>();
         }
+        #endregion
 
+        private void mnu_Operator_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmOperatorMaster>();
+        }
+
+        private void mnu_Role_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmRoleMaster>();
+        }
     }
 }

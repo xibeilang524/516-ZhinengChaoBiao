@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>chart.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="LJH.GeneralLibrary">
       <HintPath>..\Reference\LJH.GeneralLibrary.dll</HintPath>
@@ -52,6 +55,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reference\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -69,11 +76,29 @@
     <Compile Include="Controls\DivisionTree.designer.cs">
       <DependentUpon>DivisionTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FunctionTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FunctionTree.designer.cs">
+      <DependentUpon>FunctionTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RoleCombobox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RoleCombobox.designer.cs">
+      <DependentUpon>RoleCombobox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UCDivision.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\UCDivision.Designer.cs">
       <DependentUpon>UCDivision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePwd.designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDeviceBusDetail.cs">
       <SubType>Form</SubType>
@@ -117,11 +142,29 @@
     <Compile Include="FrmDivisionMaster.designer.cs">
       <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperatorDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperatorDetail.designer.cs">
+      <DependentUpon>FrmOperatorDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperatorMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperatorMaster.designer.cs">
+      <DependentUpon>FrmOperatorMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRead.cs">
       <SubType>Form</SubType>
@@ -147,14 +190,32 @@
     <Compile Include="FrmReadLogStatistics.designer.cs">
       <DependentUpon>FrmReadLogStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRoleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRoleDetail.designer.cs">
+      <DependentUpon>FrmRoleDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRoleMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRoleMaster.designer.cs">
+      <DependentUpon>FrmRoleMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="NPOIExcelHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\DivisionTree.resx">
       <DependentUpon>DivisionTree.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FunctionTree.resx">
+      <DependentUpon>FunctionTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\UCDivision.resx">
       <DependentUpon>UCDivision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDeviceBusDetail.resx">
       <DependentUpon>FrmDeviceBusDetail.cs</DependentUpon>
@@ -177,8 +238,17 @@
     <EmbeddedResource Include="FrmDivisionMaster.resx">
       <DependentUpon>FrmDivisionMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperatorDetail.resx">
+      <DependentUpon>FrmOperatorDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperatorMaster.resx">
+      <DependentUpon>FrmOperatorMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRead.resx">
       <DependentUpon>FrmRead.cs</DependentUpon>
@@ -188,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReadLogStatistics.resx">
       <DependentUpon>FrmReadLogStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRoleDetail.resx">
+      <DependentUpon>FrmRoleDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRoleMaster.resx">
+      <DependentUpon>FrmRoleMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -220,6 +296,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="chart.ico" />
     <Content Include="config.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

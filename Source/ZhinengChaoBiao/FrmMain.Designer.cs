@@ -41,12 +41,18 @@
             this.mnu_ReadLogReport = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mnu_Statistics = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_Operator = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnu_Role = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblOperator = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.ucFormView1 = new LJH.GeneralLibrary.WinformControl.UCFormView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +84,11 @@
             this.toolStripSeparator1,
             this.mnu_ReadLogReport,
             this.toolStripSeparator4,
-            this.mnu_Statistics});
+            this.mnu_Statistics,
+            this.toolStripSeparator6,
+            this.mnu_Operator,
+            this.toolStripSeparator5,
+            this.mnu_Role});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(788, 48);
@@ -155,13 +165,50 @@
             this.mnu_Statistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.mnu_Statistics.Click += new System.EventHandler(this.mnu_Statistics_Click);
             // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 48);
+            // 
+            // mnu_Operator
+            // 
+            this.mnu_Operator.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Operator.Image")));
+            this.mnu_Operator.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_Operator.Name = "mnu_Operator";
+            this.mnu_Operator.Size = new System.Drawing.Size(48, 45);
+            this.mnu_Operator.Text = "操作员";
+            this.mnu_Operator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_Operator.Click += new System.EventHandler(this.mnu_Operator_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 48);
+            // 
+            // mnu_Role
+            // 
+            this.mnu_Role.Image = ((System.Drawing.Image)(resources.GetObject("mnu_Role.Image")));
+            this.mnu_Role.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_Role.Name = "mnu_Role";
+            this.mnu_Role.Size = new System.Drawing.Size(60, 45);
+            this.mnu_Role.Text = "角色管理";
+            this.mnu_Role.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_Role.Click += new System.EventHandler(this.mnu_Role_Click);
+            // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblOperator});
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(788, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblOperator
+            // 
+            this.lblOperator.Name = "lblOperator";
+            this.lblOperator.Size = new System.Drawing.Size(0, 17);
             // 
             // panel1
             // 
@@ -203,14 +250,18 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +285,11 @@
         private System.Windows.Forms.ToolStripButton mnu_ReadLogReport;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton mnu_Statistics;
+        private System.Windows.Forms.ToolStripStatusLabel lblOperator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton mnu_Operator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton mnu_Role;
     }
 }
 

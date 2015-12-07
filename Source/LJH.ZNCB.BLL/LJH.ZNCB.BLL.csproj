@@ -81,7 +81,9 @@
     <Compile Include="DeviceBusBLL.cs" />
     <Compile Include="DeviceReadLogBLL.cs" />
     <Compile Include="DivisionBLL.cs" />
+    <Compile Include="OperatorBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LJH.ZNCB.DAL\LJH.ZNCB.DAL.csproj">

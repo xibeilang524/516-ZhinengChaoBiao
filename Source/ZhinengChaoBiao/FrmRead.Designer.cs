@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRead));
             this.label1 = new System.Windows.Forms.Label();
             this.txtValue = new LJH.GeneralLibrary.WinformControl.DecimalTextBox(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
@@ -133,6 +134,7 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRead";
             this.Text = "模拟读卡";
             this.Load += new System.EventHandler(this.FrmRead_Load);

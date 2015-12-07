@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReadLogStatistics));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkEachDevice = new System.Windows.Forms.CheckBox();
             this.rdYear = new System.Windows.Forms.RadioButton();
             this.rdMonth = new System.Windows.Forms.RadioButton();
             this.rdDay = new System.Windows.Forms.RadioButton();
@@ -48,7 +50,6 @@
             this.colDevice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDeviceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chkEachDevice = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,6 +84,18 @@
             this.groupBox2.TabIndex = 161;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "统计方式";
+            // 
+            // chkEachDevice
+            // 
+            this.chkEachDevice.AutoSize = true;
+            this.chkEachDevice.Checked = true;
+            this.chkEachDevice.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEachDevice.Location = new System.Drawing.Point(22, 51);
+            this.chkEachDevice.Name = "chkEachDevice";
+            this.chkEachDevice.Size = new System.Drawing.Size(108, 16);
+            this.chkEachDevice.TabIndex = 3;
+            this.chkEachDevice.Text = "按设备分开统计";
+            this.chkEachDevice.UseVisualStyleBackColor = true;
             // 
             // rdYear
             // 
@@ -229,8 +242,8 @@
             // 
             // colReadDate
             // 
-            dataGridViewCellStyle2.Format = "yyyy-MM-dd HH:mm:ss";
-            this.colReadDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "yyyy-MM-dd HH:mm:ss";
+            this.colReadDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.colReadDate.HeaderText = "统计日期";
             this.colReadDate.Name = "colReadDate";
             this.colReadDate.ReadOnly = true;
@@ -254,18 +267,6 @@
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
             // 
-            // chkEachDevice
-            // 
-            this.chkEachDevice.AutoSize = true;
-            this.chkEachDevice.Checked = true;
-            this.chkEachDevice.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEachDevice.Location = new System.Drawing.Point(22, 51);
-            this.chkEachDevice.Name = "chkEachDevice";
-            this.chkEachDevice.Size = new System.Drawing.Size(108, 16);
-            this.chkEachDevice.TabIndex = 3;
-            this.chkEachDevice.Text = "按设备分开统计";
-            this.chkEachDevice.UseVisualStyleBackColor = true;
-            // 
             // FrmReadLogStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -274,6 +275,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmReadLogStatistics";
             this.Text = "读表记录报表";
             this.Load += new System.EventHandler(this.FrmReadLogReport_Load);

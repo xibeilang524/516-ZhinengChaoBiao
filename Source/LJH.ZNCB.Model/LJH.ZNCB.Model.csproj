@@ -85,7 +85,14 @@
     <Compile Include="DeviceReadLog.cs" />
     <Compile Include="DeviceType.cs" />
     <Compile Include="Division.cs" />
+    <Compile Include="Security\Operator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\OperatorRightAttribute.cs" />
+    <Compile Include="Security\PermissionActionDescription.cs" />
+    <Compile Include="Security\PermissionActions.cs" />
+    <Compile Include="Security\PermissionResolver.cs" />
+    <Compile Include="Security\Permissions.cs" />
+    <Compile Include="Security\Role.cs" />
     <Compile Include="SearchCondition\AlarmSearchCondition.cs" />
     <Compile Include="SearchCondition\DeviceReadLogSearchCondition.cs" />
     <Compile Include="SysparameterInfo.cs" />

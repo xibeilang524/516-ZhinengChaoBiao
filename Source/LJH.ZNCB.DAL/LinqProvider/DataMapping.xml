@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="ZhinengChaoBiao" xmlns="http://schemas.microsoft.com/linqtosql/mapping/2007">
+  <Table Name="Operator" Member="LJH.ZNCB.Model.Security.Operator">
+    <Type Name="LJH.ZNCB.Model.Security.Operator">
+      <Column Name="ID" Member="ID" DbType="nVarChar(50) NOT NULL" CanBeNull="false" IsPrimaryKey="true" />
+      <Column Name="Name" Member="Name"  DbType="nvarchar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never"/>
+      <Column Name="Password" Member="_Password"  DbType="nVarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never"/>
+      <Column Name="RoleID" Member="RoleID" DbType="nvarchar(50) NULL" CanBeNull="false" UpdateCheck="Never"/>
+    </Type>
+  </Table>
+  <Table Name="Role" Member="LJH.ZNCB.Model.Security.Role">
+    <Type Name="LJH.ZNCB.Model.Security.Role">
+      <Column Name="ID" Member="ID"  DbType="nvarchar(50) NOT NULL" CanBeNull="false" IsPrimaryKey="true" />
+      <Column Name="Name" Member="Name"  DbType="nvarchar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never"/>
+      <Column Name="Permission" Member="Permission"  DbType="nVarChar(4000)" UpdateCheck="Never"/>
+      <Column Name="Memo" Member="Memo"  DbType="nVarChar(200)" UpdateCheck="Never"/>
+    </Type>
+  </Table>
   <Table Name="Sysparameter" Member="LJH.ZNCB.Model.SysparameterInfo">
     <Type Name="LJH.ZNCB.Model.SysparameterInfo">
       <Column Name="ID" Member="ID"  DbType="nvarchar(50)" IsPrimaryKey="true" />

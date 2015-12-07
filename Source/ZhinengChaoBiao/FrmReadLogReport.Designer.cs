@@ -30,7 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReadLogReport));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbDeviceType = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnQuery = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,8 +49,6 @@
             this.colLastDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLastValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbDeviceType = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -67,6 +68,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 109);
             this.panel1.TabIndex = 1;
+            // 
+            // cmbDeviceType
+            // 
+            this.cmbDeviceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDeviceType.FormattingEnabled = true;
+            this.cmbDeviceType.Items.AddRange(new object[] {
+            "",
+            "智能电表",
+            "智能水表"});
+            this.cmbDeviceType.Location = new System.Drawing.Point(318, 80);
+            this.cmbDeviceType.Name = "cmbDeviceType";
+            this.cmbDeviceType.Size = new System.Drawing.Size(143, 20);
+            this.cmbDeviceType.TabIndex = 160;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(262, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "设备类型";
             // 
             // btnExport
             // 
@@ -208,28 +231,6 @@
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
             // 
-            // cmbDeviceType
-            // 
-            this.cmbDeviceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDeviceType.FormattingEnabled = true;
-            this.cmbDeviceType.Items.AddRange(new object[] {
-            "",
-            "智能电表",
-            "智能水表"});
-            this.cmbDeviceType.Location = new System.Drawing.Point(318, 80);
-            this.cmbDeviceType.Name = "cmbDeviceType";
-            this.cmbDeviceType.Size = new System.Drawing.Size(143, 20);
-            this.cmbDeviceType.TabIndex = 160;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 159;
-            this.label2.Text = "设备类型";
-            // 
             // FrmReadLogReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -238,6 +239,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmReadLogReport";
             this.Text = "读表记录报表";
             this.Load += new System.EventHandler(this.FrmReadLogReport_Load);

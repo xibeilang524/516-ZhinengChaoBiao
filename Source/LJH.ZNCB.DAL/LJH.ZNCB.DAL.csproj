@@ -81,6 +81,8 @@
     <Compile Include="LinqProvider\DeviceProvider.cs" />
     <Compile Include="LinqProvider\DeviceReadLogProvider.cs" />
     <Compile Include="LinqProvider\DivisionProvider.cs" />
+    <Compile Include="LinqProvider\OperatorProvider.cs" />
+    <Compile Include="LinqProvider\RoleProvider.cs" />
     <Compile Include="LinqProvider\SysparameterProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderFactory.cs" />

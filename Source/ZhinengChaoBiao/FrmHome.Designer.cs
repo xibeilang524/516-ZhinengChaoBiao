@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.chtYearEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtYearWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtMonthWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtMonthEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chtYearWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chtYearEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtMonthWater)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtMonthEnergy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -86,24 +87,6 @@
             this.panel1.Size = new System.Drawing.Size(927, 466);
             this.panel1.TabIndex = 66;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(727, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 466);
-            this.panel3.TabIndex = 7;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(721, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(6, 466);
-            this.splitter1.TabIndex = 8;
-            this.splitter1.TabStop = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -121,6 +104,34 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 466);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // chtYearEnergy
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtYearEnergy.ChartAreas.Add(chartArea1);
+            this.chtYearEnergy.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.ItemColumnSpacing = 10;
+            legend1.Name = "Legend1";
+            this.chtYearEnergy.Legends.Add(legend1);
+            this.chtYearEnergy.Location = new System.Drawing.Point(3, 236);
+            this.chtYearEnergy.Name = "chtYearEnergy";
+            this.chtYearEnergy.Size = new System.Drawing.Size(354, 227);
+            this.chtYearEnergy.TabIndex = 5;
+            this.chtYearEnergy.Text = "chart1";
+            // 
+            // chtYearWater
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chtYearWater.ChartAreas.Add(chartArea2);
+            this.chtYearWater.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.ItemColumnSpacing = 10;
+            legend2.Name = "Legend1";
+            this.chtYearWater.Legends.Add(legend2);
+            this.chtYearWater.Location = new System.Drawing.Point(363, 236);
+            this.chtYearWater.Name = "chtYearWater";
+            this.chtYearWater.Size = new System.Drawing.Size(355, 227);
+            this.chtYearWater.TabIndex = 4;
+            this.chtYearWater.Text = "chart1";
             // 
             // chtMonthWater
             // 
@@ -152,33 +163,23 @@
             this.chtMonthEnergy.TabIndex = 1;
             this.chtMonthEnergy.Text = "chart1";
             // 
-            // chtYearWater
+            // splitter1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtYearWater.ChartAreas.Add(chartArea2);
-            this.chtYearWater.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.ItemColumnSpacing = 10;
-            legend2.Name = "Legend1";
-            this.chtYearWater.Legends.Add(legend2);
-            this.chtYearWater.Location = new System.Drawing.Point(363, 236);
-            this.chtYearWater.Name = "chtYearWater";
-            this.chtYearWater.Size = new System.Drawing.Size(355, 227);
-            this.chtYearWater.TabIndex = 4;
-            this.chtYearWater.Text = "chart1";
+            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(721, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(6, 466);
+            this.splitter1.TabIndex = 8;
+            this.splitter1.TabStop = false;
             // 
-            // chtYearEnergy
+            // panel3
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtYearEnergy.ChartAreas.Add(chartArea1);
-            this.chtYearEnergy.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.ItemColumnSpacing = 10;
-            legend1.Name = "Legend1";
-            this.chtYearEnergy.Legends.Add(legend1);
-            this.chtYearEnergy.Location = new System.Drawing.Point(3, 236);
-            this.chtYearEnergy.Name = "chtYearEnergy";
-            this.chtYearEnergy.Size = new System.Drawing.Size(354, 227);
-            this.chtYearEnergy.TabIndex = 5;
-            this.chtYearEnergy.Text = "chart1";
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(727, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 466);
+            this.panel3.TabIndex = 7;
             // 
             // FrmHome
             // 
@@ -187,16 +188,17 @@
             this.ClientSize = new System.Drawing.Size(927, 516);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmHome";
             this.Text = "主页";
             this.Load += new System.EventHandler(this.FrmDeviceReport_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtMonthWater)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtMonthEnergy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).EndInit();
             this.ResumeLayout(false);
 
         }
