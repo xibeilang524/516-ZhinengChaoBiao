@@ -41,6 +41,7 @@ namespace LJH.ZNCB.Device
                     ret = new DeviceBus(comport, 1200);
                     _Buses.Add(ret);
                 }
+                if (!ret.IsOpened) ret.Open();
                 return ret;
             }
         }
