@@ -124,6 +124,12 @@
     <Compile Include="FrmDeviceMaster.designer.cs">
       <DependentUpon>FrmDeviceMaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDevicesReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDevicesReal.designer.cs">
+      <DependentUpon>FrmDevicesReal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     <EmbeddedResource Include="FrmDeviceMaster.resx">
       <DependentUpon>FrmDeviceMaster.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDevicesReal.resx">
+      <DependentUpon>FrmDevicesReal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +298,10 @@
     <ProjectReference Include="..\LJH.ZNCB.BLL\LJH.ZNCB.BLL.csproj">
       <Project>{DBE68001-9556-4FEC-9203-9839015C25C6}</Project>
       <Name>LJH.ZNCB.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LJH.ZNCB.Device\LJH.ZNCB.Device.csproj">
+      <Project>{5152894B-621E-4A28-AA0B-BB2752B69F1B}</Project>
+      <Name>LJH.ZNCB.Device</Name>
     </ProjectReference>
     <ProjectReference Include="..\LJH.ZNCB.Model\LJH.ZNCB.Model.csproj">
       <Project>{3C57CEE1-D25C-42E4-A95E-F44871BBA637}</Project>

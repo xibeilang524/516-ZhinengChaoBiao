@@ -48,6 +48,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblOperator = new System.Windows.Forms.ToolStripStatusLabel();
             this.ucFormView1 = new LJH.GeneralLibrary.WinformControl.UCFormView();
+            this.mnu_DevicesReal = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -78,6 +80,8 @@
             this.toolStripSeparator3,
             this.mnu_Device,
             this.toolStripSeparator2,
+            this.mnu_DevicesReal,
+            this.toolStripSeparator7,
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.mnu_ReadLogReport,
@@ -218,6 +222,21 @@
             this.ucFormView1.Size = new System.Drawing.Size(788, 401);
             this.ucFormView1.TabIndex = 9;
             // 
+            // mnu_DevicesReal
+            // 
+            this.mnu_DevicesReal.Image = ((System.Drawing.Image)(resources.GetObject("mnu_DevicesReal.Image")));
+            this.mnu_DevicesReal.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.mnu_DevicesReal.Name = "mnu_DevicesReal";
+            this.mnu_DevicesReal.Size = new System.Drawing.Size(60, 45);
+            this.mnu_DevicesReal.Text = "实时读表";
+            this.mnu_DevicesReal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.mnu_DevicesReal.Click += new System.EventHandler(this.mnu_DevicesReal_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 48);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -265,6 +284,8 @@
         private System.Windows.Forms.ToolStripButton mnu_Operator;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton mnu_Role;
+        private System.Windows.Forms.ToolStripButton mnu_DevicesReal;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
     }
 }
 

@@ -79,13 +79,13 @@ namespace ZhinengChaoBiao
         protected override void ShowItemInGridViewRow(DataGridViewRow row, object item)
         {
             Device ct = item as Device;
+            row.Tag = ct;
             row.Cells["colID"].Value = ct.ID;
             row.Cells["colName"].Value = ct.Name;
             var bus = _Buses.SingleOrDefault(it => it.ID == ct.Bus);
             row.Cells["colBus"].Value = bus != null ? bus.Name : null;
             row.Cells["colDeviceType"].Value = ct.DeviceType.ToString();
             row.Cells["colAddress"].Value = ct.Address;
-            row.Cells["colState"].Value = ct.State;
             row.Cells["colLastDt"].Value = ct.LastDate;
             var d = facilityTree.GetDivision(ct.Division);
             row.Cells["colDivision"].Value = d != null ? d.Name : null;

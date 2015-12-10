@@ -144,5 +144,10 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmRoleMaster>();
         }
+
+        private void mnu_DevicesReal_Click(object sender, EventArgs e)
+        {
+            ShowSingleForm<FrmDevicesReal>();
+        }
     }
 }

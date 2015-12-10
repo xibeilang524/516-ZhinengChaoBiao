@@ -9,9 +9,9 @@ namespace LJH.ZNCB.Device
     public class DeviceBusService
     {
         #region 静态属性
-        private DeviceBusService _Instance = null;
+        private static DeviceBusService _Instance = null;
 
-        public DeviceBusService Instance
+        public static DeviceBusService Instance
         {
             get
             {
