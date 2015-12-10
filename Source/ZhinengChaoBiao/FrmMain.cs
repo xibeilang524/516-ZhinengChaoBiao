@@ -101,7 +101,6 @@ namespace ZhinengChaoBiao
             }
             this.Text = string.Format("{0} [{1}]", "能源管理平台", Application.ProductVersion);
             DoLogIn();
-
             mnu_Home.PerformClick();
         }
 

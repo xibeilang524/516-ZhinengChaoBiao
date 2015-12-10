@@ -47,8 +47,6 @@
             this.mnu_Role = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblOperator = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.ucFormView1 = new LJH.GeneralLibrary.WinformControl.UCFormView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -210,33 +208,14 @@
             this.lblOperator.Name = "lblOperator";
             this.lblOperator.Size = new System.Drawing.Size(0, 17);
             // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 48);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 401);
-            this.panel1.TabIndex = 4;
-            this.panel1.Visible = false;
-            // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitter1.Location = new System.Drawing.Point(200, 48);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(6, 401);
-            this.splitter1.TabIndex = 5;
-            this.splitter1.TabStop = false;
-            this.splitter1.Visible = false;
-            // 
             // ucFormView1
             // 
             this.ucFormView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucFormView1.FormHeaderLength = 135;
             this.ucFormView1.HideHeader = false;
-            this.ucFormView1.Location = new System.Drawing.Point(206, 48);
+            this.ucFormView1.Location = new System.Drawing.Point(0, 48);
             this.ucFormView1.Name = "ucFormView1";
-            this.ucFormView1.Size = new System.Drawing.Size(582, 401);
+            this.ucFormView1.Size = new System.Drawing.Size(788, 401);
             this.ucFormView1.TabIndex = 9;
             // 
             // FrmMain
@@ -245,8 +224,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 471);
             this.Controls.Add(this.ucFormView1);
-            this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -273,8 +250,6 @@
         private System.Windows.Forms.ToolStripMenuItem 系统ToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Splitter splitter1;
         private LJH.GeneralLibrary.WinformControl.UCFormView ucFormView1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

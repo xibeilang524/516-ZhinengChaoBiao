@@ -36,6 +36,12 @@ namespace LJH.ZNCB.Device
                 if (_Response != null) _PacketReceived.Set();
             }
         }
+
+        private Packet GetPacket(List<byte> data)
+        {
+
+            return null ;
+        }
         #endregion
 
         #region 公共属性

@@ -20,7 +20,31 @@ namespace ZhinengChaoBiao
             InitializeComponent();
         }
 
+        private List<Device> _Devices = null;
+        private List<DeviceReadLog> _ReadLogs = null;
+
+
         #region 私有方法
+        private void InitCharts()
+        {
+            InitChart(chtMonthEnergy);
+            chtMonthEnergy.Titles.Add("本月用电量");
+            chtMonthEnergy.ChartAreas["ChartArea1"].AxisY.Interval = 10;
+            chtMonthEnergy.ChartAreas["ChartArea1"].AxisX.Title = "日期";
+            InitChart(chtMonthWater);
+            chtMonthWater.Titles.Add("本月用水量");
+            chtMonthWater.ChartAreas["ChartArea1"].AxisY.Interval = 10;
+            chtMonthWater.ChartAreas["ChartArea1"].AxisX.Title = "日期";
+            InitChart(chtYearWater);
+            chtYearWater.Titles.Add("最近一年用水量");
+            chtYearWater.ChartAreas["ChartArea1"].AxisY.Interval = 100;
+            chtYearWater.ChartAreas["ChartArea1"].AxisX.Title = "月份";
+            InitChart(chtYearEnergy);
+            chtYearEnergy.Titles.Add("最近一年用电量");
+            chtYearEnergy.ChartAreas["ChartArea1"].AxisY.Interval = 100;
+            chtYearEnergy.ChartAreas["ChartArea1"].AxisX.Title = "月份";
+        }
+
         private void InitChart(Chart chart)
         {
             //作图区的显示属性设置
@@ -71,44 +95,39 @@ namespace ZhinengChaoBiao
         }
         #endregion
 
+        #region 事件处理函数
+
         private void FrmDeviceReport_Load(object sender, EventArgs e)
         {
-            InitChart(chtMonthEnergy);
-            chtMonthEnergy.Titles.Add("本月用电量");
-            chtMonthEnergy.ChartAreas["ChartArea1"].AxisY.Interval = 10;
-            chtMonthEnergy.ChartAreas["ChartArea1"].AxisX.Title = "日期";
-            InitChart(chtMonthWater);
-            chtMonthWater.Titles.Add("本月用水量");
-            chtMonthWater.ChartAreas["ChartArea1"].AxisY.Interval = 10;
-            chtMonthWater.ChartAreas["ChartArea1"].AxisX.Title = "日期";
-            InitChart(chtYearWater);
-            chtYearWater.Titles.Add("最近一年用水量");
-            chtYearWater.ChartAreas["ChartArea1"].AxisY.Interval = 100;
-            chtYearWater.ChartAreas["ChartArea1"].AxisX.Title = "月份";
-            InitChart(chtYearEnergy);
-            chtYearEnergy.Titles.Add("最近一年用电量");
-            chtYearEnergy.ChartAreas["ChartArea1"].AxisY.Interval = 100;
-            chtYearEnergy.ChartAreas["ChartArea1"].AxisX.Title = "月份";
-
+            this.divisionTree1.Init();
+            InitCharts();
             btnFresh.PerformClick();
         }
 
         private void btnFresh_Click(object sender, EventArgs e)
         {
-            DateTime dt = DateTime.Now;
-            var con = new DeviceReadLogSearchCondition();
-            con.ReadDateRange = new DateTimeRange(new DateTime(dt.Year, dt.Month, 1).AddMonths(-6), dt);
-            var logs = new DeviceReadLogBLL(AppSettings.Current.ConnStr).GetItems(con).QueryObjects;
+            _Devices = new DeviceBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
 
+            var con = new DeviceReadLogSearchCondition();
+            con.ReadDateRange = new DateTimeRange(DateTime.Today.AddMonths(-12), DateTime.Now);
+            _ReadLogs = new DeviceReadLogBLL(AppSettings.Current.ConnStr).GetItems(con).QueryObjects;
+
+            divisionTree1.Init();
+            divisionTree1_NodeMouseClick(divisionTree1, null);
+        }
+
+        private void FillCharts(List<DeviceReadLog> logs)
+        {
+            DateTime dt = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
             var montEenergies = from it in logs
-                                where it.DeviceType == DeviceType.智能电表 && it.ReadDate >= new DateTime(dt.Year, dt.Month, 1)
+                                where it.DeviceType == DeviceType.智能电表 && it.ReadDate >= dt
                                 orderby it.ReadDate ascending
                                 group it by it.ReadDate.ToString("dd日");
             FillChart(chtMonthEnergy, Color.Red, montEenergies);
 
             var monthWaters = from it in logs
-                              where it.DeviceType == DeviceType.智能水表 && it.ReadDate >= new DateTime(dt.Year, dt.Month, 1)
-                             orderby it.ReadDate ascending
+                              where it.DeviceType == DeviceType.智能水表 && it.ReadDate >= dt
+                              orderby it.ReadDate ascending
                               group it by it.ReadDate.ToString("dd日");
             FillChart(chtMonthWater, Color.Green, monthWaters);
 
@@ -119,10 +138,29 @@ namespace ZhinengChaoBiao
             FillChart(chtYearEnergy, Color.Red, yearenergies);
 
             var yearWaters = from it in logs
-                         where it.DeviceType == DeviceType.智能水表
-                         orderby it.ReadDate ascending
-                         group it by it.ReadDate.ToString("yyyy年MM月");
+                             where it.DeviceType == DeviceType.智能水表
+                             orderby it.ReadDate ascending
+                             group it by it.ReadDate.ToString("yyyy年MM月");
             FillChart(chtYearWater, Color.Green, yearWaters);
         }
+
+        private void divisionTree1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (_ReadLogs == null || _ReadLogs.Count == 0) return;
+            if (_Devices == null || _Devices.Count == 0) return;
+            
+            var devices = _Devices;
+            if (divisionTree1.SelectedNode != null && divisionTree1 .SelectedNode .Tag !=null )
+            {
+                var ds = divisionTree1.GetDivisionofNode(divisionTree1.SelectedNode);
+                if (ds != null && ds.Count > 0) devices = devices.Where(it => ds.Exists(d => d.ID == it.Division)).ToList();
+            }
+            if (devices != null && devices.Count > 0)
+            {
+                var logs = _ReadLogs.Where(it => devices.Exists(d => d.ID == it.DeviceID)).ToList();
+                FillCharts(logs);
+            }
+        }
+        #endregion
     }
 }

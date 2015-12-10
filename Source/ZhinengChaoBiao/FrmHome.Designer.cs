@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
@@ -41,15 +42,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFresh = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chtYearEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtYearWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtMonthWater = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chtMonthEnergy = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
+            this.divisionTree1 = new ZhinengChaoBiao.Controls.DivisionTree(this.components);
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).BeginInit();
@@ -59,18 +61,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnFresh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(927, 50);
             this.panel2.TabIndex = 65;
+            this.panel2.Visible = false;
             // 
             // btnFresh
             // 
-            this.btnFresh.Location = new System.Drawing.Point(769, 12);
+            this.btnFresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFresh.Location = new System.Drawing.Point(12, 6);
             this.btnFresh.Name = "btnFresh";
-            this.btnFresh.Size = new System.Drawing.Size(108, 31);
+            this.btnFresh.Size = new System.Drawing.Size(172, 31);
             this.btnFresh.TabIndex = 0;
             this.btnFresh.Text = "刷新(&F)";
             this.btnFresh.UseVisualStyleBackColor = true;
@@ -87,6 +91,25 @@
             this.panel1.Size = new System.Drawing.Size(927, 466);
             this.panel1.TabIndex = 66;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.divisionTree1);
+            this.panel3.Controls.Add(this.btnFresh);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 466);
+            this.panel3.TabIndex = 7;
+            // 
+            // splitter1
+            // 
+            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.splitter1.Location = new System.Drawing.Point(200, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(6, 466);
+            this.splitter1.TabIndex = 10;
+            this.splitter1.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -97,13 +120,13 @@
             this.tableLayoutPanel1.Controls.Add(this.chtMonthWater, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.chtMonthEnergy, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(206, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 466);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.tableLayoutPanel1.TabIndex = 11;
             // 
             // chtYearEnergy
             // 
@@ -163,23 +186,19 @@
             this.chtMonthEnergy.TabIndex = 1;
             this.chtMonthEnergy.Text = "chart1";
             // 
-            // splitter1
+            // divisionTree1
             // 
-            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitter1.Location = new System.Drawing.Point(721, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(6, 466);
-            this.splitter1.TabIndex = 8;
-            this.splitter1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(727, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 466);
-            this.panel3.TabIndex = 7;
+            this.divisionTree1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.divisionTree1.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawText;
+            this.divisionTree1.HideSelection = false;
+            this.divisionTree1.ItemHeight = 25;
+            this.divisionTree1.Location = new System.Drawing.Point(0, 43);
+            this.divisionTree1.Name = "divisionTree1";
+            this.divisionTree1.Size = new System.Drawing.Size(200, 423);
+            this.divisionTree1.TabIndex = 1;
+            this.divisionTree1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.divisionTree1_NodeMouseClick);
             // 
             // FrmHome
             // 
@@ -192,8 +211,8 @@
             this.Name = "FrmHome";
             this.Text = "主页";
             this.Load += new System.EventHandler(this.FrmDeviceReport_Load);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chtYearEnergy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtYearWater)).EndInit();
@@ -208,12 +227,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnFresh;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtYearEnergy;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtYearWater;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtMonthWater;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtMonthEnergy;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chtYearEnergy;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chtYearWater;
+        private Controls.DivisionTree divisionTree1;
     }
 }
