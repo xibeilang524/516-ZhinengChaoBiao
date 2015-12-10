@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using LJH.ZNCB.BLL;
 using LJH.ZNCB.Model;
 using LJH.ZNCB.Model.Security;
+using LJH.ZNCB.Device;
 using LJH.GeneralLibrary.Core.UI;
 
 namespace ZhinengChaoBiao
@@ -24,6 +26,72 @@ namespace ZhinengChaoBiao
         #region 私有变量
         private List<Form> _openedForms = new List<Form>();
         private DateTime _ExpireDate = new DateTime(2015, 12, 31);
+        private Thread _ReadValueThread = null;
+        #endregion
+
+        #region 私有方法
+        private void ReadValue_Thread()
+        {
+            try
+            {
+                bool hasRead = false;
+                while (true)
+                {
+                    DateTime dt = DateTime.Now;
+                    if (dt.Hour == 23)
+                    {
+                        if (!hasRead)
+                        {
+                            hasRead = true;
+                            var _Buses = new DeviceBusBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
+                            var _Devices = (new DeviceBLL(AppSettings.Current.ConnStr)).GetItems(null).QueryObjects;
+                            if (_Buses == null || _Buses.Count == 0) continue;
+                            if (_Devices == null || _Devices.Count == 0) continue;
+                            foreach (var d in _Devices)
+                            {
+                                var bus = _Buses.SingleOrDefault(it => it.ID == d.Bus);
+                                if (bus != null)
+                                {
+                                    decimal value = 0;
+                                    var ret = DeviceBusService.Instance.ReadValue((byte)bus.Comport, d.Address, out value);
+                                    if (ret == BusResult.Success)
+                                    {
+                                        new DeviceBLL(AppSettings.Current.ConnStr).AddReadLog(d.ID, DateTime.Now, value);
+                                    }
+                                }
+                            }
+                            this.Invoke((Action)(() =>
+                                                    {
+                                                        foreach (Form frm in _openedForms)  //如果主页已经打开，刷新主页
+                                                        {
+                                                            if (frm is FrmHome)
+                                                            {
+                                                                (frm as FrmHome).FreshData();
+                                                                break;
+                                                            }
+                                                        }
+                                                    }));
+                        }
+                    }
+                    else
+                    {
+                        hasRead = false;
+                    }
+                    Thread.Sleep(60000);
+                }
+            }
+            catch (ThreadAbortException)
+            {
+            }
+            catch (Exception ex)
+            {
+                LJH.GeneralLibrary.ExceptionHandling.ExceptionPolicy.HandleException(ex);
+            }
+            finally
+            {
+                _ReadValueThread = null;
+            }
+        }
         #endregion
 
         #region 公共方法
@@ -102,6 +170,10 @@ namespace ZhinengChaoBiao
             this.Text = string.Format("{0} [{1}]", "能源管理平台", Application.ProductVersion);
             DoLogIn();
             mnu_Home.PerformClick();
+
+            _ReadValueThread = new Thread(new ThreadStart(ReadValue_Thread));
+            _ReadValueThread.IsBackground = true;
+            _ReadValueThread.Start();
         }
 
         private void mnu_Division_Click(object sender, EventArgs e)
@@ -133,7 +205,6 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmReadLogStatistics>();
         }
-        #endregion
 
         private void mnu_Operator_Click(object sender, EventArgs e)
         {
@@ -149,5 +220,6 @@ namespace ZhinengChaoBiao
         {
             ShowSingleForm<FrmDevicesReal>();
         }
+        #endregion
     }
 }

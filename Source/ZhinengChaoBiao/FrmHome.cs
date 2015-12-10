@@ -95,6 +95,18 @@ namespace ZhinengChaoBiao
         }
         #endregion
 
+        public void FreshData()
+        {
+            _Devices = new DeviceBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
+
+            var con = new DeviceReadLogSearchCondition();
+            con.ReadDateRange = new DateTimeRange(DateTime.Today.AddMonths(-12), DateTime.Now);
+            _ReadLogs = new DeviceReadLogBLL(AppSettings.Current.ConnStr).GetItems(con).QueryObjects;
+
+            divisionTree1.Init();
+            divisionTree1_NodeMouseClick(divisionTree1, null);
+        }
+
         #region 事件处理函数
 
         private void FrmDeviceReport_Load(object sender, EventArgs e)
@@ -106,14 +118,7 @@ namespace ZhinengChaoBiao
 
         private void btnFresh_Click(object sender, EventArgs e)
         {
-            _Devices = new DeviceBLL(AppSettings.Current.ConnStr).GetItems(null).QueryObjects;
-
-            var con = new DeviceReadLogSearchCondition();
-            con.ReadDateRange = new DateTimeRange(DateTime.Today.AddMonths(-12), DateTime.Now);
-            _ReadLogs = new DeviceReadLogBLL(AppSettings.Current.ConnStr).GetItems(con).QueryObjects;
-
-            divisionTree1.Init();
-            divisionTree1_NodeMouseClick(divisionTree1, null);
+            FreshData();
         }
 
         private void FillCharts(List<DeviceReadLog> logs)
@@ -148,9 +153,9 @@ namespace ZhinengChaoBiao
         {
             if (_ReadLogs == null || _ReadLogs.Count == 0) return;
             if (_Devices == null || _Devices.Count == 0) return;
-            
+
             var devices = _Devices;
-            if (divisionTree1.SelectedNode != null && divisionTree1 .SelectedNode .Tag !=null )
+            if (divisionTree1.SelectedNode != null && divisionTree1.SelectedNode.Tag != null)
             {
                 var ds = divisionTree1.GetDivisionofNode(divisionTree1.SelectedNode);
                 if (ds != null && ds.Count > 0) devices = devices.Where(it => ds.Exists(d => d.ID == it.Division)).ToList();
