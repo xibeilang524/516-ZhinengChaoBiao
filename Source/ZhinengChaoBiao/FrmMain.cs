@@ -25,7 +25,7 @@ namespace ZhinengChaoBiao
 
         #region 私有变量
         private List<Form> _openedForms = new List<Form>();
-        private DateTime _ExpireDate = new DateTime(2015, 12, 31);
+        private DateTime _ExpireDate = new DateTime(2016, 3, 31);
         private Thread _ReadValueThread = null;
         #endregion
 
